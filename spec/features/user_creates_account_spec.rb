@@ -23,7 +23,7 @@ feature "user can create an account" do
     click_button "Sign up"
 
     expect(page).to have_content "Welcome! You have signed up successfully."
-    expect(page).to have_content "Reviews"
+    expect(page).to have_content "Boston Microhoods"
   end
 
   scenario "user unsuccessfully creates account" do
