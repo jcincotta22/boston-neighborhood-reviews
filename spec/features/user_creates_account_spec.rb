@@ -22,17 +22,15 @@ feature "user can create an account" do
 
     click_button "Sign up"
 
-    expect(page).to have_content "Account Successfully Created!"
-    expect(page).to have_link "Home"
+    expect(page).to have_content "Welcome! You have signed up successfully."
+    expect(page).to have_content "Reviews"
   end
 
   scenario "user unsuccessfully creates account" do
     visit "/users/sign_up"
 
     click_button "Sign up"
-
-    expect(page).to have_content("First Name can't be blank")
-    expect(page).to have_content("Last Name can't be blank")
+    expect(page).to have_content("First name can't be blank")
     expect(page).to have_content("Email can't be blank")
   end
 
