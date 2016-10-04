@@ -1,0 +1,29 @@
+<div class="form">
+  <%= form_for @microhood, html: {class: "form"} do |f| %>
+  <div class="input-group select">
+      Select a Neighborhood:
+      <%= f.select :neighborhood_id, options_for_select(@neighborhoods_collection), class: "input-group" %>
+  </div>
+  <div class="input-group">
+    Name:
+    <%= f.text_field :name, class: "input-group-field" %>
+  </div>
+  <div class="input-group">
+    Street:
+    <%= f.text_field :street, class: "input-group-field" %>
+  </div>
+
+  <div class="input-group">
+    Zip Code:
+    <%= f.text_field :zip, class: "input-group-field"%>
+  </div>
+
+  <div class="input-group">
+    Description:
+    <%= f.text_field :description, class: "input-group-field" %>
+  </div>
+    <div class="input-group">
+      <%= f.submit "Add Microhood", class: "button" %>
+    </div>
+  <% end %>
+</div>
