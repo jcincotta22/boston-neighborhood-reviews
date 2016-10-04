@@ -11,6 +11,7 @@ RSpec.describe Microhood do
 
   let(:microhood) {
     Microhood.create(
+      name: "downtown",
       street: "Cherry Lane",
       zip: "02451",
       neighborhood_id: neighborhood.id,
@@ -21,6 +22,7 @@ RSpec.describe Microhood do
   it "has the expected properties" do
     expect(microhood.user).to eq(user)
     expect(microhood.neighborhood).to eq(neighborhood)
+    expect(microhood.name).to eq("downtown")
     expect(microhood.street).to eq("Cherry Lane")
     expect(microhood.zip).to eq("02451")
   end

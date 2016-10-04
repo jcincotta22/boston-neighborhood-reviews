@@ -11,6 +11,7 @@ RSpec.describe Review do
 
   let(:microhood) {
     Microhood.create(
+      name: "downtown",
       street: "Cherry Lane",
       zip: "02451",
       neighborhood_id: neighborhood.id,

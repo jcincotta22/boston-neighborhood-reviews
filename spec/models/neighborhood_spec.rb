@@ -11,6 +11,7 @@ RSpec.describe Neighborhood do
 
   let(:microhood) {
     Microhood.create(
+      name: "downtown",
       street: "Cherry Lane",
       zip: "02451",
       neighborhood_id: neighborhood.id,
@@ -20,6 +21,7 @@ RSpec.describe Neighborhood do
 
   let(:microhood2) {
     Microhood.create(
+      name: "uptown",
       street: "Main Lane",
       zip: "02551",
       neighborhood_id: neighborhood.id,
