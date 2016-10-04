@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Microhood do
   let(:user){
-    User.create(user_name: "Jeff", profile_pic_url: "http://bit.ly/2cYj2Ex")
+    User.create(first_name: "Jeff", last_name: "Cinc", email: "blah@gmail.com", password: "12345abc!A")
   }
 
   let(:neighborhood){
@@ -24,5 +24,5 @@ RSpec.describe Microhood do
     expect(microhood.street).to eq("Cherry Lane")
     expect(microhood.zip).to eq("02451")
   end
-  
+
 end
