@@ -10,10 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161004132917) do
+ActiveRecord::Schema.define(version: 20161003201806) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "microhoods", force: :cascade do |t|
+    t.integer  "user_id",         null: false
+    t.integer  "neighborhood_id", null: false
+    t.string   "street",          null: false
+    t.string   "zip"
+    t.string   "description"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["neighborhood_id"], name: "index_microhoods_on_neighborhood_id", using: :btree
+    t.index ["user_id"], name: "index_microhoods_on_user_id", using: :btree
+  end
+
+  create_table "neighborhoods", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "reviews", force: :cascade do |t|
     t.integer  "user_id",            null: false
