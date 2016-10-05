@@ -1,10 +1,7 @@
 require 'rails_helper'
 
 feature 'user creates a microhood' do
-  before {
-    neighborhood = Neighborhood.create(name: 'West Roxbury')
-    neighborhood2 = Neighborhood.create(name: 'Allston')
-  }
+  before { neighborhood = Neighborhood.create(name: 'West Roxbury') }
 
   scenario 'user visits the page of microhoods, clicks create microhood' do
     user = FactoryGirl.create(:user)
@@ -20,7 +17,7 @@ feature 'user creates a microhood' do
     expect(page).to have_content('Description')
   end
 
-  scenario "user fills out form and creates a new microhood" do
+  scenario 'user fills out form and creates a new microhood' do
     user = FactoryGirl.create(:user)
 
     visit root_path
