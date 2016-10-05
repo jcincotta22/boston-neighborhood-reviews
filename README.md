@@ -4,4 +4,5 @@
 ![Code Climate](https://codeclimate.com/github/jcincotta22/boston-neighborhood-reviews.png)
 ![Coverage Status](https://coveralls.io/repos/jcincotta22/boston-neighborhood-reviews/badge.png)
 
-Boston neighborhoood review site!!
+
+Boston neighborhood reviews

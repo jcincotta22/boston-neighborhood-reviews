@@ -23,7 +23,7 @@ feature 'user can create an account' do
     click_button 'Sign up'
 
     expect(page).to have_content 'Welcome! You have signed up successfully.'
-    expect(page).to have_content 'Reviews'
+    expect(page).to have_content 'Microhood'
   end
 
   scenario 'user attempts to sign in email already in use' do
@@ -52,15 +52,4 @@ feature 'user can create an account' do
     click_button 'Sign up'
     expect(page).to have_content 'First name can\'t be blank'
   end
-
-  scenario 'user attempts to sign up with blank form' do
-    visit '/users/sign_up'
-
-    click_button 'Sign up'
-    expect(page).to have_content('First name can\'t be blank')
-    expect(page).to have_content('Last name can\'t be blank')
-    expect(page).to have_content('Password can\'t be blank')
-    expect(page).to have_content('Email can\'t be blank')
-  end
-
 end

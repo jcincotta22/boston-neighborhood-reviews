@@ -1,0 +1,9 @@
+<h1>Boston Microhoods</h1>
+
+<% @microhoods.each do |microhood| %>
+  <ul>
+    <%= link_to "#{microhood.street}, #{microhood.zip}", microhood %>
+  </ul>
+<% end %>
+
+  <p> <%= link_to "Create and Review a New Microhood", new_microhood_path %> </p>
