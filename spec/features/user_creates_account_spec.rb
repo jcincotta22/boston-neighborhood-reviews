@@ -1,6 +1,28 @@
 require 'rails_helper'
 
 feature 'user can create an account' do
+<<<<<<< HEAD
+||||||| merged common ancestors
+  # scenario 'user clicks 'Sign up' and is brought to page with form to create new account' do
+  #
+  #   visit '/'
+  #   expect(page).to have_content 'Sign up'
+  #
+  #   click_button 'Sign up'
+  #
+  #   expect(page).to have_content 'Sign up'
+  # end
+=======
+  scenario 'user is brought to page with form to create account' do
+
+    visit '/'
+    expect(page).to have_content 'Register'
+
+    click_link 'Register'
+
+    expect(page).to have_content 'Sign up'
+  end
+>>>>>>> fl-tc-additional-user-auth-stories
 
   scenario 'user successfully creates new account' do
     visit '/users/sign_up'
@@ -14,13 +36,47 @@ feature 'user can create an account' do
     click_button 'Sign up'
 
     expect(page).to have_content 'Welcome! You have signed up successfully.'
-    expect(page).to have_content 'Boston Microhoods'
+    expect(page).to have_content 'Microhood'
   end
 
+<<<<<<< HEAD
   scenario 'user unsuccessfully creates account' do
     visit '/users/sign_up'
+||||||| merged common ancestors
+  scenario 'user unsuccessfully creates account' do
+    visit '/users/sign_up'
+
+=======
+  scenario 'user attempts to sign in email already in use' do
+    visit 'users/sign_up'
+
+    user = FactoryGirl.create(:user)
+
+    fill_in 'First Name', with: 'Krystal'
+    fill_in 'Last Name', with: 'Cantos'
+    fill_in 'Email', with: user.email
+    fill_in 'Password', with: 'password'
+    fill_in 'Password confirmation', with: 'password'
+
+>>>>>>> fl-tc-additional-user-auth-stories
     click_button 'Sign up'
-    expect(page).to have_content('First name can\'t be blank')
-    expect(page).to have_content('Email can\'t be blank')
+
+    expect(page).to have_content 'Email has already been taken'
   end
+<<<<<<< HEAD
+||||||| merged common ancestors
+
+=======
+
+  scenario 'user attempts to sign up without first and last name' do
+    visit 'users/sign_up'
+
+    fill_in 'Email', with: 'myemail@gmail.com'
+    fill_in 'Password', with: 'password'
+    fill_in 'Password confirmation', with: 'password'
+
+    click_button 'Sign up'
+    expect(page).to have_content 'First name can\'t be blank'
+  end
+>>>>>>> fl-tc-additional-user-auth-stories
 end
