@@ -7,7 +7,6 @@ class Review < ActiveRecord::Base
   validates :public_transport, length: { in: 0..5 }, numericality: { only_integer: true }, presence: true
   validates :title, presence: true, length: { maximum: 40 }
   validates :body, presence: true, length: { minimum: 50 }
-
   belongs_to :user
   belongs_to :microhood
 end
