@@ -9,4 +9,5 @@ class Review < ActiveRecord::Base
   validates :body, presence: true, length: { minimum: 50 }
   belongs_to :user
   belongs_to :microhood
+
 end
