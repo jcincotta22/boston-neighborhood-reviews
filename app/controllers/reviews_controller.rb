@@ -22,6 +22,29 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def edit
+    @review = Review.find(params[:id])
+    @microhood = @review.microhood
+  end
+
+  def update
+    @review = Review.find(params[:id])
+    if @review.update_attributes(review_params)
+      flash[:notice] = 'Review was successfully edited'
+      redirect_to microhood_path(@microhood)
+    else
+      @erros = @review.errors.full_messages.join(', ')
+      flash[:notice] = @errors
+      render 'microhoods/show'
+    end
+  end
+
+  def destroy
+    @microhood = Microhood.find(params[:microhood_id])
+    Review.destroy(params[:id])
+    redirect_to microhood_path(@microhood)
+  end
+
   private
 
   def overall_rating(schools, trans, food, safety)
