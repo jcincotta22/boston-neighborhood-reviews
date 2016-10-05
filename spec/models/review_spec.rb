@@ -28,6 +28,7 @@ RSpec.describe Review do
       public_transport: 1,
       title: 'Dorchester Review',
       body: 'This place is totally horrible! I would never live here if I could afford to move. But sadly, I\'m stuck here. Wahhhhhhhhhh',
+
       user_id: user.id,
       microhood_id: microhood.id
     )

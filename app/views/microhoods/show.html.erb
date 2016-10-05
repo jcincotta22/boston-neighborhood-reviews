@@ -3,12 +3,49 @@
   <h5> <%= review.title %> </h5>
   <ul>
     <li>Overall Rating: <%= review.rating %></li>
-    <li>Saftey Rating: <%= review.safety_rating %></li>
+    <li>Safety Rating: <%= review.safety_rating %></li>
     <li>School Rating: <%= review.schools_rating %></li>
     <li>Food and Entertainment Rating: <%= review.food_entertainment %></li>
     <li>Public Transportation Rating: <%= review.public_transport %></li>
   </ul>
     <p>Description: <%= review.body %> </p>
+
+
+<% end %>
+
+<div class='form'>
+  <%= form_for [@microhood, @review] do |f| %>
+  <div class='input-group select'>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+  </div>
+  <div class='input-group'>
+    <%= f.label 'Safety Rating' %>
+    <%= f.number_field :safety_rating, class: 'input-group-field' %>
+  </div>
+  <div class='input-group'>
+    <%= f.label 'School Rating' %>
+    <%= f.number_field :schools_rating, class: 'input-group-field' %>
+  </div>
+
+  <div class='input-group'>
+    <%= f.label 'Food and Entertainment' %>
+    <%= f.number_field :food_entertainment, class: 'input-group-field'%>
+  </div>
+
+  <div class='input-group'>
+    <%= f.label 'Public Transportation' %>
+    <%= f.number_field :public_transport, class: 'input-group-field'%>
+  </div>
+
+  <div class='input-group'>
+    <%= f.label 'Description' %>
+    <%= f.text_field :body, class: 'input-group-field' %>
+  </div>
+    <div class='input-group'>
+      <%= f.submit 'Add Review', class: 'button' %>
+    </div>
+  </div>
 <% end %>
 <% if !@current_user.nil? %>
   <% if @current_user.id == @microhood.user_id %>

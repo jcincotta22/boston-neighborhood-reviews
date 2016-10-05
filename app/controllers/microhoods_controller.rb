@@ -69,6 +69,7 @@ class MicrohoodsController < ApplicationController
     @microhood = Microhood.find(params[:id])
     @reviews = @microhood.reviews
     @current_user = current_user
+    @review = Review.new
   end
 
   private

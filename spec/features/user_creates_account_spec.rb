@@ -1,15 +1,6 @@
 require 'rails_helper'
 
 feature 'user can create an account' do
-  # scenario 'user clicks 'Sign up' and is brought to page with form to create new account' do
-  #
-  #   visit '/'
-  #   expect(page).to have_content 'Sign up'
-  #
-  #   click_button 'Sign up'
-  #
-  #   expect(page).to have_content 'Sign up'
-  # end
 
   scenario 'user successfully creates new account' do
     visit '/users/sign_up'
@@ -28,10 +19,8 @@ feature 'user can create an account' do
 
   scenario 'user unsuccessfully creates account' do
     visit '/users/sign_up'
-
     click_button 'Sign up'
     expect(page).to have_content('First name can\'t be blank')
-    expect(page).to have_content 'Email can\'t be blank'
+    expect(page).to have_content('Email can\'t be blank')
   end
-
 end
