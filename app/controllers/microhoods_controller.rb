@@ -46,7 +46,14 @@ class MicrohoodsController < ApplicationController
 
   def update
     @microhood = Microhood.find(params[:id])
-    if@microhood.update_attributes(microhood_params)
+    neighborhoods = Neighborhood.all
+    @neighborhoods_collection = []
+
+    neighborhoods.each do |neighborhood|
+      @neighborhoods_collection << [neighborhood.name, neighborhood.id]
+    end
+
+    if @microhood.update_attributes(microhood_params)
       redirect_to @microhood
     else
       render 'edit'
