@@ -17,7 +17,7 @@ feature 'user sign in' do
     expect(page).to have_content 'Email'
     expect(page).to have_content 'Password'
 
-    user= FactoryGirl.create(:user)
+    user = FactoryGirl.create(:user)
 
     fill_in 'Email', with: user.email
     fill_in 'Password', with: user.password
