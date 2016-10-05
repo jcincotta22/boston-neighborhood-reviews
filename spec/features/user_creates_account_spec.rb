@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature 'user can create an account' do
-  scenario 'user clicks Register and is brought to page with form to create new account' do
+  scenario 'user is brought to page with form to create account' do
 
     visit '/'
     expect(page).to have_content 'Register'
