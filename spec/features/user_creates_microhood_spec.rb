@@ -19,7 +19,6 @@ feature 'user creates a microhood' do
 
   scenario 'user fills out form and creates a new microhood' do
     user = FactoryGirl.create(:user)
-
     visit root_path
     login_as(user, scope: :user)
     click_link('Create and Review a New Microhood')
