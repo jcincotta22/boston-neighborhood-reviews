@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'user sign in' do
   scenario 'user gets to login page from home page' do
     visit '/'
-    expect(page).to have_content 'Reviews'
+    expect(page).to have_content 'Microhoods'
     click_link 'Login'
 
     expect(page).to have_content 'Log in'
@@ -48,13 +48,13 @@ feature 'user sign in' do
     login_as(user, :scope => :user)
 
     visit '/'
-    expect(page).to have_content 'Reviews'
+    expect(page).to have_content 'Microhoods'
     expect(page).to have_content 'Edit registration'
     expect(page).to have_content 'Logout'
 
     click_link 'Logout'
     expect(page).to have_content 'Signed out successfully'
-    expect(page).to have_content 'Reviews'
+    expect(page).to have_content 'Microhoods'
     expect(page).to have_link 'Register'
     expect(page).to have_link 'Login'
   end
