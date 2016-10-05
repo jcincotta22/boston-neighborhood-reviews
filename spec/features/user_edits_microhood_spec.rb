@@ -23,7 +23,6 @@ feature 'user edits a micrhood' do
     visit microhood_path(microhood)
     click_link "Edit this microhood!"
     fill_in 'Street', with: ''
-    save_and_open_page
     click_button 'Add Microhood'
 
     expect(page).to have_content 'Street can\'t be blank'
