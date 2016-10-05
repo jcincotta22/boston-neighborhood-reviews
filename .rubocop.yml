@@ -7,5 +7,9 @@ Style/FrozenStringLiteralComment:
 Documentation:
   Enabled: false
 
-  Metrics/LineLength:
-  Max: 140
+Metrics/LineLength:
+  Max: 200
+
+AllCops:
+  Exclude:
+    - db/schema.rb
