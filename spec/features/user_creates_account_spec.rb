@@ -30,8 +30,8 @@ feature 'user can create an account' do
     visit '/users/sign_up'
 
     click_button 'Sign up'
-    expect(page).to have_content('First name can't be blank')
-    expect(page).to have_content('Email can't be blank')
+    expect(page).to have_content("First name can't be blank")
+    expect(page).to have_content("Email can't be blank")
   end
 
 end
