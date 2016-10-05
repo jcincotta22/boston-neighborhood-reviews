@@ -27,7 +27,8 @@ RSpec.describe Review do
       food_entertainment: 4,
       public_transport: 1,
       title: 'Dorchester Review',
-      body: 'This place is totally horrible! I would never live here if I could afford to move. But sadly, I am stuck here. Wahhhhhhhhhh',
+      body: 'This place is totally horrible! I would never live here if I could afford to move. But sadly, I\'m stuck here. Wahhhhhhhhhh',
+
       user_id: user.id,
       microhood_id: microhood.id
     )
@@ -39,7 +40,7 @@ RSpec.describe Review do
     expect(review.food_entertainment).to eq(4)
     expect(review.public_transport).to eq(1)
     expect(review.title).to eq('Dorchester Review')
-    expect(review.body).to eq('This place is totally horrible! I would never live here if I could afford to move. But sadly, I am stuck here. Wahhhhhhhhhh')
+    expect(review.body).to eq('This place is totally horrible! I would never live here if I could afford to move. But sadly, I\'m stuck here. Wahhhhhhhhhh')
     expect(review.microhood_id).to eq(microhood.id)
   end
 

@@ -34,9 +34,41 @@ class MicrohoodsController < ApplicationController
     end
   end
 
+  def edit
+    @microhood = Microhood.find(params[:id])
+    neighborhoods = Neighborhood.all
+    @neighborhoods_collection = []
+
+    neighborhoods.each do |neighborhood|
+      @neighborhoods_collection << [neighborhood.name, neighborhood.id]
+    end
+  end
+
+  def update
+    @microhood = Microhood.find(params[:id])
+    neighborhoods = Neighborhood.all
+    @neighborhoods_collection = []
+
+    neighborhoods.each do |neighborhood|
+      @neighborhoods_collection << [neighborhood.name, neighborhood.id]
+    end
+
+    if @microhood.update_attributes(microhood_params)
+      redirect_to @microhood
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    Microhood.destroy(params[:id])
+    redirect_to microhoods_path
+  end
+
   def show
     @microhood = Microhood.find(params[:id])
     @reviews = @microhood.reviews
+    @current_user = current_user
     @review = Review.new
   end
 

@@ -47,3 +47,13 @@
     </div>
   </div>
 <% end %>
+<% if !@current_user.nil? %>
+  <% if @current_user.id == @microhood.user_id %>
+    <br></br>
+    <%= link_to 'Edit this microhood!', edit_microhood_path(@microhood) %>
+    <br></br>
+    <%= form_for(@microhood, method: "delete") do |f| %>
+      <%= f.submit "Delete Microhood"%>
+    <% end %>
+  <% end %>
+<% end %>

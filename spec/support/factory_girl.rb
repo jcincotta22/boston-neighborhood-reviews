@@ -33,6 +33,6 @@ FactoryGirl.define do
     sequence(:food_entertainment) { |n| n }
     sequence(:public_transport) { |n| n }
     sequence(:title) { |n| "This awesome review #{n}" }
-    sequence(:body) { |n| "OMG this review is off the hook! Check it out guys! I love this microhood so much!!!!!!!!!!!#{n}" }
+    sequence(:body) { |n| "Check it out guys! I love this microhood so much!!!!!!!!!!!#{n}" }
   end
 end
