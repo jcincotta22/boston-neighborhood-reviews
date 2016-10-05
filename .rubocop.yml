@@ -1,5 +1,6 @@
 
 
+
 AllCops:
   Exclude:
     - db/schema.rb
@@ -406,6 +407,7 @@ Style/Copyright:
 
 Style/DocumentationMethod:
   RequireForNonPublicMethods: false
+>>>>>>> master
   Enabled: false
 
 # Multi-line method chaining should be done with leading dots.
