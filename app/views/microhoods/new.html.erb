@@ -2,31 +2,31 @@
   <h2>New Microhood:</h2>
 </div>
 <div class="form">
-  <%= form_for @microhood, url: {action: "create"}, html: {class: "form"} do |f| %>
+  <%= form_for @microhood do |f| %>
   <div class="input-group select">
-      Select a Neighborhood:
-      <%= f.select :neighborhood_id, options_for_select(@neighborhoods_collection), class: "input-group" %>
+      <%= f.label :neighborhood %>
+      <%= f.select :neighborhood_id, options_for_select(@neighborhoods_collection) %>
   </div>
   <div class="input-group">
-    Name:
-    <%= f.text_field :name, class: "input-group-field" %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
   </div>
   <div class="input-group">
-    Street:
-    <%= f.text_field :street, class: "input-group-field" %>
-  </div>
-
-  <div class="input-group">
-    Zip Code:
-    <%= f.text_field :zip, class: "input-group-field"%>
+    <%= f.label :street %>
+    <%= f.text_field :street %>
   </div>
 
   <div class="input-group">
-    Description:
-    <%= f.text_field :description, class: "input-group-field" %>
+    <%= f.label :zip %>
+    <%= f.text_field :zip %>
+  </div>
+
+  <div class="input-group">
+    <%= f.label :description %>
+    <%= f.text_field :description %>
   </div>
     <div class="input-group">
-      <%= f.submit "Add Microhood", class: "button" %>
+      <%= f.submit "Add Microhood" %>
     </div>
   </div>
 
