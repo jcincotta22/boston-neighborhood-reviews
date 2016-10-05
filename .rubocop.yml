@@ -6,3 +6,6 @@ Style/FrozenStringLiteralComment:
 
 Documentation:
   Enabled: false
+
+  Metrics/LineLength:
+  Max: 140
