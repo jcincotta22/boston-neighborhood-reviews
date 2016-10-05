@@ -31,7 +31,7 @@ feature 'user updates account information' do
     fill_in 'Current password', with: user.password
 
     click_button 'Update'
-    expect(page).to have_content 'First name can't be blank'
+    expect(page).to have_content 'First name can\'t be blank'
   end
 
   scenario 'user edits account and does not submit current password' do
@@ -41,6 +41,6 @@ feature 'user updates account information' do
     visit '/users/edit'
     fill_in 'First Name', with: 'NewName'
     click_button 'Update'
-    expect(page).to have_content 'Current password can't be blank'
+    expect(page).to have_content 'Current password can\'t be blank'
   end
 end
