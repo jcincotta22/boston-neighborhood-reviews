@@ -45,7 +45,7 @@ feature 'user sign in' do
 
   scenario 'user sign out' do
     user = FactoryGirl.create(:user)
-    login_as(user, :scope => :user)
+    login_as(user, scope: :user)
 
     visit '/'
     expect(page).to have_content 'Microhoods'
