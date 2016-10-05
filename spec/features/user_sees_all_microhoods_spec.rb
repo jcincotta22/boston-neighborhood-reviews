@@ -1,19 +1,10 @@
 require 'rails_helper'
 
-feature "user adds microhoods" do
-  user = FactoryGirl.create(:user)
-  login_as(user, :scope => :user)
-  context "As a user" do
-    context "I visit the root page" do
-      before { visit root_path }
-
-      scenario "user adds a microhood" do
-        click_link("Create and Review a New Microhood")
-        save_and_open_page
-        expect(page).to have_content(microhood1)
-        expect(page).to have_content(microhood2)
-        expect(page).to have_content(microhood3)
-      end
-    end
+feature "User Views all microhood" do
+  scenario "User views all  microhoods" do
+    microhoods = FactoryGirl.create_list(:microhood, 2)
+    visit root_path
+    expect(page).to have_content(microhoods.first.street)
+    expect(page).to have_content(microhoods.last.street)
   end
 end

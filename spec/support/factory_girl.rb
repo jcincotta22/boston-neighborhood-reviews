@@ -1,8 +1,6 @@
-require 'factory_girl'
-
 FactoryGirl.define do
   factory :user do
-    sequence(:email) { |n| "auser#{n}@gmail.com" }
+    sequence(:email) { |n| "user1#{n}@gmail.com" }
     sequence(:password) { |n| "password#{n}" }
     sequence(:first_name) { |n| "John#{n}" }
     sequence(:last_name) { |n| "Smith#{n}" }
@@ -11,7 +9,8 @@ end
 
 FactoryGirl.define do
   factory :microhood do
-    user_id 1
+    user
+    neighborhood
     sequence(:street) { |n| "#{n} Main St" }
     sequence(:zip) { |n| "#{n}2433" }
     sequence(:name) { |n| "Downtown Area#{n}" }
@@ -26,8 +25,8 @@ end
 
 FactoryGirl.define do
   factory :review do
-    user_id 1
-    microhood_id 1
+    user
+    microhood
     sequence(:rating) { |n| n + 0.5 }
     sequence(:safety_rating) { |n| n }
     sequence(:schools_rating) { |n| n }
