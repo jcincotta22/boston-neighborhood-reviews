@@ -10,16 +10,42 @@ class ReviewsController < ApplicationController
     @microhood = Microhood.find(params[:microhood_id])
     @neighborhood = Neighborhood.find(@microhood.neighborhood_id)
     @review.microhood = @microhood
-    @review.user_id = @user.id
-    invalid_entry
+    @review.user_id = @user.try(:id)
+
     if @review.save
       flash[:notice] = 'Review added successfully!'
       redirect_to microhood_path(@microhood)
     else
+
       @errors = @review.errors.full_messages.join(', ')
       flash[:notice] = @errors
-      redirect_to microhood_path(@microhood)
+      @reviews = @microhood.reviews
+      render 'microhoods/show'
     end
+  end
+
+  def edit
+    @review = Review.find(params[:id])
+    @microhood = @review.microhood
+  end
+
+  def update
+    @review = Review.find(params[:id])
+    @microhood = @review.microhood
+    if @review.update_attributes(review_params)
+      flash[:notice] = 'Review was successfully edited'
+      redirect_to microhood_path(@microhood)
+    else
+      @errors = @review.errors.full_messages.join(', ')
+      flash[:notice] = @errors
+      render action: 'edit'
+    end
+  end
+
+  def destroy
+    @microhood = Microhood.find(params[:microhood_id])
+    Review.destroy(params[:id])
+    redirect_to microhood_path(@microhood)
   end
 
   private
