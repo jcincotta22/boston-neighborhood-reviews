@@ -18,7 +18,6 @@ class MicrohoodsController < ApplicationController
     @user = current_user
     @microhood = Microhood.new(microhood_params)
     @microhood.user = @user
-    binding.pry
     if @user
       if @microhood.save
         flash[:notice] = "Successfully Created New Microhood"
