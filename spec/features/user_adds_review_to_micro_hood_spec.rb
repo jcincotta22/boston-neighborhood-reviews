@@ -6,7 +6,6 @@ feature 'user adds review to microhood' do
     user = FactoryGirl.create(:user)
     visit root_path
     login_as(user, scope: :user)
-    save_and_open_page
     click_link("#{microhoods.first.street}")
     expect(page).to have_content("Reviews for #{microhoods.first.street}")
     fill_in('review_title', with: 'Ratings for Main St')
