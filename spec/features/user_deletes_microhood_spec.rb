@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature 'user deletes a microhood' do
-  scenario 'user successfully deletes a micrhood' do
+  scenario 'user successfully deletes a microhood' do
     user = FactoryGirl.create(:user)
     login_as(user, scope: :user)
     microhood = FactoryGirl.create(:microhood, user: user)
