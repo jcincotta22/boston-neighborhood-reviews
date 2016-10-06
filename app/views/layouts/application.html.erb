@@ -6,16 +6,25 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
 
   <body>
-    <ul class="hmenu">
-      <%= render 'devise/menu/registration_items' %>
-      <%= render 'devise/menu/login_items' %>
-    </ul>
-    <% flash.each do |key, value| %>
-      <%= value %>
-    <% end %>
+    <div data-sticky-container>
+    <div class="title-bar" data-sticky data-options="marginTop:0;" style="width:100%">
+      <div class="title-bar-right">
+        <ul class="hmenu">
+          <%= render 'devise/menu/registration_items' %>
+          <%= render 'devise/menu/login_items' %>
+        </ul>
+      </div>
+      <div class="title-bar-left">Boston Microhoods</div>
+    </div>
+  </div>
+      <% flash.each do |key, value| %>
+        <%= value %>
+      <% end %>
     <%= yield %>
   </body>
 </html>
