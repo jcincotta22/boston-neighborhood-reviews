@@ -9,12 +9,15 @@
     <li>Public Transportation Rating: <%= review.public_transport %></li>
   </ul>
     <p>Description: <%= review.body %> </p>
-
+  <%= form_for([@microhood, review], remote: true, html: {class:'like'}) do |f| %>
+    <%= f.hidden_field :vote_count, value: 1 %>
+    <%= f.submit "Like" %>
+  <% end %>
 
 <% end %>
 
 <div class='form'>
-  <%= form_for [@microhood, @review] do |f| %>
+  <%= form_for([@microhood, @review]) do |f| %>
   <div class='input-group select'>
       <%= f.label :title %>
       <%= f.text_field :title %>
