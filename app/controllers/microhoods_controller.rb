@@ -18,15 +18,20 @@ class MicrohoodsController < ApplicationController
     @user = current_user
     @microhood = Microhood.new(microhood_params)
     @microhood.user = @user
-
     if @user
       if @microhood.save
         flash[:notice] = "Successfully Created New Microhood"
         redirect_to microhood_path(@microhood)
       else
+        neighborhoods = Neighborhood.all
+        @neighborhoods_collection = []
+
+        neighborhoods.each do |neighborhood|
+          @neighborhoods_collection << [neighborhood.name, neighborhood.id]
+        end
         @errors = @microhood.errors.full_messages.join(', ')
         flash[:notice] = @errors
-        render 'new'
+        render action: 'new'
       end
     else
       flash[:notice] = "You must be signed in"

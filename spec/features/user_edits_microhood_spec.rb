@@ -8,7 +8,7 @@ feature 'user edits a micrhood' do
 
     visit microhood_path(microhood)
     expect(page).to have_content microhood.street
-    click_link 'Edit this microhood!'
+    click_button 'Edit Microhood'
     fill_in 'Street', with: 'My Street'
     click_button 'Add Microhood'
     expect(page).to have_content 'My Street'
@@ -21,7 +21,7 @@ feature 'user edits a micrhood' do
     microhood = FactoryGirl.create(:microhood, user: user, neighborhood: neighborhood)
 
     visit microhood_path(microhood)
-    click_link "Edit this microhood!"
+    click_button 'Edit Microhood'
     fill_in 'Street', with: ''
     click_button 'Add Microhood'
 
