@@ -12,7 +12,7 @@ FactoryGirl.define do
     user
     neighborhood
     sequence(:street) { |n| "#{n} Main St" }
-    sequence(:zip) { |n| "#{n}2433" }
+    sequence(:zip) { |n| "12433" }
     sequence(:name) { |n| "Downtown Area#{n}" }
   end
 end

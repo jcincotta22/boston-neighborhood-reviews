@@ -38,6 +38,15 @@
   <div class=<%="vote_count-#{review.id}" %>>
      Vote count: <%= review.total_vote_count %>
   </div>
+  <% if @current_user.id == review.user_id || @current_user.admin == true%>
+    <br></br>
+    <%= form_for([@microhood,review], method: :get, url: edit_microhood_review_path(@microhood, review) ) do |f| %>
+      <%= f.submit 'Edit Review'%>
+    <% end %>
+     <%= form_for([@microhood,review], method: 'delete') do |f| %>
+       <%= f.submit 'Delete Review'%>
+     <% end %>
+  <% end %>
 <% end %>
 
 <div class='form'>
@@ -75,12 +84,13 @@
   </div>
 <% end %>
 <% if !@current_user.nil? %>
-  <% if @current_user.id == @microhood.user_id %>
+  <% if @current_user.id == @microhood.user_id || @current_user.admin == true%>
     <br></br>
-    <%= link_to 'Edit this microhood!', edit_microhood_path(@microhood) %>
-    <br></br>
-    <%= form_for(@microhood, method: "delete") do |f| %>
-      <%= f.submit "Delete Microhood"%>
+    <%= form_for(@microhood, method: :get, url: edit_microhood_path(@microhood) ) do |f| %>
+      <%= f.submit 'Edit Microhood'%>
+    <% end %>
+    <%= form_for(@microhood, method: 'delete') do |f| %>
+      <%= f.submit 'Delete Microhood'%>
     <% end %>
   <% end %>
 <% end %>
