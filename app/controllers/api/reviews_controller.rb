@@ -9,7 +9,8 @@ class Api::ReviewsController < ApiController
     if !vote.nil?
       if params[:value] == "up"
         if vote.value == 1
-          error = "You may only vote once per review"
+          vote.value = 0
+          vote.save
           button_class = ''
         else
           vote.value = 1
@@ -19,7 +20,8 @@ class Api::ReviewsController < ApiController
         end
       else
         if vote.value == -1
-          error = 'You may only vote once per review'
+          vote.value = 0
+          vote.save
           button_class = ''
         else
           vote.value = -1
