@@ -15,4 +15,13 @@ class Review < ActiveRecord::Base
     rating = ((safety_rating + schools_rating + food_entertainment + public_transport)/4.0).round(1)
     review.update_attribute(:rating, rating)
   end
+
+  def alert_creator
+    if save
+      ReviewAlertMailer.new_review(self).deliver
+      return true
+    else
+      return false
+    end
+  end
 end
