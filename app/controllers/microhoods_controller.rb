@@ -72,7 +72,7 @@ class MicrohoodsController < ApplicationController
 
   def show
     @microhood = Microhood.find(params[:id])
-    @reviews = @microhood.reviews
+    @reviews = @microhood.reviews.order(total_vote_count: :desc)
     @current_user = current_user
     @review = Review.new
     @user_vote_class = ''

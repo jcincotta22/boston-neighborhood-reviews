@@ -22,14 +22,12 @@
   <% end %>
   <% if !@current_user.nil? %>
     <%= form_for([@microhood, review], remote: true, html: {class:"like"}) do |f| %>
-      <%= f.hidden_field :vote_count, value: 1 %>
       <%= f.hidden_field :microhood_id, value: @microhood.id %>
       <%= f.hidden_field :id, value: review.id %>
       <%= f.submit "Upvote", class: "up-button-#{review.id} #{@user_upvote_class}"%>
     <% end %>
 
     <%= form_for([@microhood, review], remote: true, html: {class:"dislike"}) do |f| %>
-      <%= f.hidden_field :vote_count, value: -1 %>
       <%= f.hidden_field :microhood_id, value: @microhood.id %>
       <%= f.hidden_field :id, value: review.id %>
       <%= f.submit "Downvote", class: "down-button-#{review.id} #{@user_downvote_class}" %>
@@ -48,7 +46,7 @@
          <%= f.submit 'Delete Review'%>
        <% end %>
     <% end %>
-  <% end %>  
+  <% end %>
 <% end %>
 
 <div class='form'>

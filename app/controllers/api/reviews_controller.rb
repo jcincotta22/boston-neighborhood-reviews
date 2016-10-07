@@ -4,7 +4,6 @@ class Api::ReviewsController < ApiController
     @review = Review.find(params[:id])
     @microhood = Microhood.find(params[:microhood_id])
     @review.microhood = @microhood
-    @review.title = "Hey it changed!"
     vote = Vote.where(user_id: current_user.id).where(review_id: @review.id)[0]
     if !vote.nil?
       if params[:value] == "up"
@@ -41,6 +40,16 @@ class Api::ReviewsController < ApiController
         button_class = 'red'
       end
     end
+    @review.update_attribute(:total_vote_count, calculate_votes)
     render json: { error: error, id: @review.id, class: button_class, vote_count: @review.total_vote_count}
+  end
+
+  def calculate_votes
+    count = 0
+    votes = Vote.where(review_id: params[:id])
+    votes.each do |vote|
+      count += vote.value
+    end
+    count
   end
 end

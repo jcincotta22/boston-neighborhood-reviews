@@ -10,13 +10,4 @@ class Review < ActiveRecord::Base
   validates :user, presence: { message: 'must be signed in'}
   belongs_to :user
   belongs_to :microhood
-
-  def total_vote_count
-    count = 0
-    votes = Vote.where(review_id: id)
-    votes.each do |vote|
-      count += vote.value
-    end
-    count
-  end
 end
