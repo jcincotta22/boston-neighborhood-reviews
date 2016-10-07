@@ -12,7 +12,7 @@ RSpec.describe ReviewAlertMailer, type: :mailer do
     end
 
     it "renders the body" do
-      expect(mail.body.encoded).to match("Your microhood was just reviewed")
+      expect(mail.body.encoded).to match("Hello #{review.microhood.user.first_name}, #{review.microhood.name} was just reviewed!")
       mail.deliver
       expect(ActionMailer::Base.deliveries.size).to eq(1)
     end
