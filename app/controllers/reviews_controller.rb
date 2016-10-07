@@ -22,12 +22,6 @@ class ReviewsController < ApplicationController
     end
   end
 
-  def update
-    respond_to do |format|
-      format.js {}
-      format.json {}
-    end
-  end
 
   private
 

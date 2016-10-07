@@ -70,6 +70,7 @@ class MicrohoodsController < ApplicationController
     @reviews = @microhood.reviews
     @current_user = current_user
     @review = Review.new
+    @user_vote_class = ''
   end
 
   private

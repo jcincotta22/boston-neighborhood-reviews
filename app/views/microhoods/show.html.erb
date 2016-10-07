@@ -9,11 +9,35 @@
     <li>Public Transportation Rating: <%= review.public_transport %></li>
   </ul>
     <p>Description: <%= review.body %> </p>
-  <%= form_for([@microhood, review], remote: true, html: {class:'like'}) do |f| %>
-    <%= f.hidden_field :vote_count, value: 1 %>
-    <%= f.submit "Like" %>
+  <% if !@current_user.nil? %>
+    <% if Vote.where(user_id: @current_user.id).where(review_id: review.id).exists? %>
+      <% if Vote.where(user_id: @current_user.id).where(review_id: review.id)[0].value == 1 %>
+        <% @user_upvote_class = 'green' %>
+        <% @user_downvote_class = '' %>
+      <% else %>
+        <% @user_downvote_class = 'red' %>
+        <% @user_upvote_class = '' %>
+      <% end %>
+    <% end %>
   <% end %>
+  <% if !@current_user.nil? %>
+    <%= form_for([@microhood, review], remote: true, html: {class:"like"}) do |f| %>
+      <%= f.hidden_field :vote_count, value: 1 %>
+      <%= f.hidden_field :microhood_id, value: @microhood.id %>
+      <%= f.hidden_field :id, value: review.id %>
+      <%= f.submit "Upvote", class: "up-button-#{review.id} #{@user_upvote_class}"%>
+    <% end %>
 
+    <%= form_for([@microhood, review], remote: true, html: {class:"dislike"}) do |f| %>
+      <%= f.hidden_field :vote_count, value: -1 %>
+      <%= f.hidden_field :microhood_id, value: @microhood.id %>
+      <%= f.hidden_field :id, value: review.id %>
+      <%= f.submit "Downvote", class: "down-button-#{review.id} #{@user_downvote_class}" %>
+    <% end %>
+  <% end %>
+  <div class=<%="vote_count-#{review.id}" %>>
+     Vote count: <%= review.total_vote_count %>
+  </div>
 <% end %>
 
 <div class='form'>
