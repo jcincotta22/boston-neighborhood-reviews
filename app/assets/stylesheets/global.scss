@@ -1,25 +1,30 @@
 .title-li {
   display: inline-block;
 }
+
 .index-title {
   font-size: 35px;
   padding-left: 8px;
-  color: white;
+  color: #ffffff;
 }
+
 .title-bar-left {
   margin-top: 20px;
   font-size: 35px;
   bottom: 0;
   position: absolute;
 }
+
 .title-bar-right {
   margin-top: 20px;
   font-size: 24px;
   bottom: 0;
 }
+
 .hmenu {
   margin-bottom: -7px;
 }
+
 .main-background {
   background: url(https://upload.wikimedia.org/wikipedia/commons/7/77/Old_State_House_Boston_Massachusetts2.jpg);
   background-repeat: no-repeat;
@@ -27,76 +32,93 @@
   background-size: cover;
   background-attachment: fixed;
 }
+
 .microhood-link a {
   font-family: 'Fjalla One', sans-serif;
-  color: white;
+  color: #ffffff;
   font-size: 25px;
 }
+
 .create-microhood-review-link a {
   font-family: 'Fjalla One', sans-serif;
-  color: white;
+  color: #ffffff;
   font-size: 25px;
 }
+
 .callout {
   background: rgba(0, 0, 0, .2);
 }
+
 ul {
   list-style-type: none;
 }
+
 .microhood-title {
   padding-left: 10px;
-  color: white;
+  color: #ffffff;
 }
+
 .description {
   padding-left: 10px;
-  color: white;
+  color: #ffffff;
 }
+
 .reviews-for {
   padding-left: 10px;
-  color: white;
+  color: #ffffff;
 }
+
 .edit-link {
   padding-left: 10px;
   padding-bottom: 5px;
   position: relative;
   display: inline-block;
 }
+
 .delete-link {
   padding-left: 10px;
   padding-bottom: 5px;
   position: relative;
   display: inline-block;
 }
+
 .input-group-field {
-  width: 15em;
   margin-left: 5px;
+  width: 15em;
 }
+
 .microhood-form-title {
   width: 15em;
   padding-left: 5px;
 }
+
 .add-review {
   margin-left: 1em;
 }
+
 .edit-microhood-link {
-  padding-left: 10px;
-  padding-bottom: 5px;
-  position: relative;
   display: inline-block;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  position: relative;
 }
+
 .delete-microhood-link {
-  padding-left: 10px;
-  padding-bottom: 5px;
-  position: relative;
   display: inline-block;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  position: relative;
 }
+
 label {
+  color: #ffffff;
   margin-left: 1em;
-  color: white;
 }
+
 .review-page {
-  background: rgba(0, 0, 0, .2);
+  background: rgba(0, 0, 0, 0.2);
 }
+
 li {
-  color: white;
+  color: #ffffff;
 }
