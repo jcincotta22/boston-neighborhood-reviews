@@ -1,5 +1,12 @@
 <h1>Boston Microhoods</h1>
 
+<%= form_tag microhoods_path, method: 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", name: nil %>
+  </p>
+<% end %>
+
 <% @microhoods.each do |microhood| %>
   <ul>
     <%= link_to "#{microhood.street}, #{microhood.zip}", microhood %>

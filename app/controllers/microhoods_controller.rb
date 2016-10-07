@@ -1,7 +1,8 @@
 
 class MicrohoodsController < ApplicationController
   def index
-    @microhoods = Microhood.all
+    search = Microhood.search(params[:search])
+    @microhoods = search
   end
 
   def new
