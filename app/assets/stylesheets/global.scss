@@ -1,10 +1,66 @@
+@font-face {
+  font-family: 'cityscape';
+  src: asset-url('cityscape');
+}
+
+@font-face {
+  font-family: 'lethal_league';
+  src: asset-url('Lethal_League');
+}
+
+@font-face {
+  font-family: 'will-harris-reg';
+  src: asset-url('Will-Harris-Regular');
+}
+
+@font-face {
+  font-family: 'hometown';
+  src: asset-url('Hometown');
+}
+
+@font-face {
+  font-family: 'assassin';
+  src: asset-url('Assassin');
+}
+
+@font-face {
+  font-family: 'romance';
+  src: asset-url('romance');
+}
+
+@font-face {
+  font-family: 'Typography_Times';
+  src: asset-url('Typography_Times_Regular');
+}
+
+// @font-face {
+//   font-family: 'Typography_Times';
+//   src: asset-url('Typography_Times Bold');
+// }
+//
+// @font-face {
+//   font-family: 'Typography_Times';
+//   src: asset-url('Typography_Times Italic');
+// }
+//
+// @font-face {
+//   font-family: 'Typography_Times';
+//   src: asset-url('Typography_Times Bold Italic');
+// }
+
+
+
+
+
+
 .title-li {
   display: inline-block;
 }
 
 .title-bar-left {
+  font-family: 'will-harris-reg';
   margin-top: 20px;
-  font-size: 35px;
+  font-size: 68px;
   bottom: 0;
   position: absolute;
 }
@@ -17,4 +73,17 @@
 
 .hmenu {
   margin-bottom: -7px;
+}
+
+h1 {
+  font-family: 'assassin';
+}
+
+.title-bar {
+  height: 7em;
+}
+
+a {
+  font-family: 'Typography_Times';
+  font-style: bold;
 }
