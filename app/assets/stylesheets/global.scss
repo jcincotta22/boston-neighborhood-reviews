@@ -1,55 +1,37 @@
 @font-face {
-  font-family: 'cityscape';
-  src: asset-url('cityscape');
+  font-family: "cityscape";
+  src: asset-url("cityscape");
 }
 
 @font-face {
-  font-family: 'lethal_league';
-  src: asset-url('Lethal_League');
+  font-family: "lethal_league";
+  src: asset-url("Lethal_League");
 }
 
 @font-face {
-  font-family: 'will-harris-reg';
-  src: asset-url('Will-Harris-Regular');
+  font-family: "will-harris-reg";
+  src: asset-url("Will-Harris-Regular");
 }
 
 @font-face {
-  font-family: 'hometown';
-  src: asset-url('Hometown');
+  font-family: "hometown";
+  src: asset-url("Hometown");
 }
 
 @font-face {
-  font-family: 'assassin';
-  src: asset-url('Assassin');
+  font-family: "assassin";
+  src: asset-url("Assassin");
 }
 
 @font-face {
-  font-family: 'romance';
-  src: asset-url('romance');
+  font-family: "romance";
+  src: asset-url("romance");
 }
 
 @font-face {
-  font-family: 'Typography_Times';
-  src: asset-url('Typography_Times_Regular');
+  font-family: "Typography_Times";
+  src: asset-url("Typography_Times_Regular");
 }
-
-// @font-face {
-//   font-family: 'Typography_Times';
-//   src: asset-url('Typography_Times Bold');
-// }
-//
-// @font-face {
-//   font-family: 'Typography_Times';
-//   src: asset-url('Typography_Times Italic');
-// }
-//
-// @font-face {
-//   font-family: 'Typography_Times';
-//   src: asset-url('Typography_Times Bold Italic');
-// }
-
-
-
 
 
 
@@ -58,7 +40,7 @@
 }
 
 .title-bar-left {
-  font-family: 'will-harris-reg';
+  font-family: "will-harris-reg";
   margin-top: 20px;
   font-size: 68px;
   bottom: 0;
@@ -76,7 +58,7 @@
 }
 
 h1 {
-  font-family: 'assassin';
+  font-family: "assassin";
 }
 
 .title-bar {
@@ -84,6 +66,6 @@ h1 {
 }
 
 a {
-  font-family: 'Typography_Times';
+  font-family: "Typography_Times";
   font-style: bold;
 }
