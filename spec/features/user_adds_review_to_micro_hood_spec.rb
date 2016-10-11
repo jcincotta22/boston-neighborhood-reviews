@@ -28,20 +28,22 @@ feature 'user adds review to microhood' do
     microhood = FactoryGirl.create(:microhood)
     user = FactoryGirl.create(:user)
     login_as(user, scope: :user)
-    visit "/microhoods/#{microhood.id}"
-    fill_in :review_title, with: 'Ratings for Microhood'
-    fill_in :review_safety_rating, with: 4
-    fill_in :review_schools_rating, with: 4
-    fill_in :review_public_transport, with: 4
-    fill_in :review_body, with: ''
+    visit microhood_path(microhood)
+    fill_in 'review_title', with: 'Ratings for Microhood'
+    fill_in 'review_safety_rating', with: 4
+    fill_in 'review_schools_rating', with: 4
+    fill_in 'review_food_entertainment', with: 4
+    fill_in 'review_public_transport', with: 4
+    fill_in 'review_body', with: ''
     click_button('Add Review')
-    find_field(:review_title).value.should eq 'Ratings for Microhood'
+    find_field('review_title').value.should eq 'Ratings for Microhood'
+    save_and_open_page
     expect(page).to have_content('Body is too short (minimum is 50 characters)')
   end
 
   scenario 'unauthenticated user attempts to submit a review' do
     microhood = FactoryGirl.create(:microhood)
-    visit "/microhoods/#{microhood.id}"
+    visit microhood_path(microhood)
     fill_in('review_title', with: 'Ratings for Main St')
     fill_in('review_safety_rating', with: 4)
     fill_in('review_schools_rating', with: 4)
@@ -56,13 +58,13 @@ feature 'user adds review to microhood' do
     microhood = FactoryGirl.create(:microhood)
     user = FactoryGirl.create(:user)
     login_as(user, scope: :user)
-    visit "/microhoods/#{microhood.id}"
-    fill_in :review_title, with: 'Ratings for Microhood'
-    fill_in :review_safety_rating, with: 6
-    fill_in :review_schools_rating, with: 6
-    fill_in :review_public_transport, with: 6
-    fill_in(:review_food_entertainment, with: 6)
-    fill_in :review_body, with: 'It is a nice place.  askdjhfasdkjfhasdkfjhasdkfjhasdfkjhasdfkjhasdfkasdflaskjfalsdkfjasdlfkjasdf'
+    visit microhood_path(microhood)
+    fill_in 'review_title', with: 'Ratings for Microhood'
+    fill_in 'review_safety_rating', with: 6
+    fill_in 'review_schools_rating', with: 6
+    fill_in 'review_public_transport', with: 6
+    fill_in 'review_food_entertainment', with: 6
+    fill_in 'review_body', with: 'It is a nice place.  askdjhfasdkjfhasdkfjhasdkfjhasdfkjhasdfkjhasdfkasdflaskjfalsdkfjasdlfkjasdf'
     click_button('Add Review')
     expect(page).to have_content 'Safety rating must be less than or equal to 5'
     expect(page).to have_content 'Food entertainment must be less than or equal to 5'

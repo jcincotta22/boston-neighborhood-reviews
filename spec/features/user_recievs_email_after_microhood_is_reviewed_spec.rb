@@ -23,7 +23,6 @@ feature 'User is notified via email after review of their created microhood' do
       last_email = ActionMailer::Base.deliveries.last
       expect(last_email.subject).to eq('New Review')
       expect(last_email.from).to eq(["no_reply@microhood.com"])
-      first_name = microhood.reviews.last.microhood.user.first_name
     end
   end
 end
