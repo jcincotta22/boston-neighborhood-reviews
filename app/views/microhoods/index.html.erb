@@ -1,9 +1,9 @@
-<div class="callout">
-<h1 class="index-title">Boston Microhoods</h1>
+<div class='callout'>
+<h1 class='index-title'>Boston Microhoods</h1>
 <% @microhoods.each do |microhood| %>
-  <ul class="microhood-link">
+  <ul class='microhood-link'>
     <%= link_to "#{microhood.street}, #{microhood.zip}", microhood %>
   </ul>
 <% end %>
-<ul class="create-microhood-review-link"> <%= link_to "Create and Review a New Microhood", new_microhood_path %> </ul>
+<ul class='create-microhood-review-link'> <%= link_to 'Create and Review a New Microhood', new_microhood_path %> </ul>
 </div>
