@@ -1,3 +1,6 @@
+$red: #ff0000;
+$green: #33cc33;
+
 .title-li {
   display: inline-block;
 }
@@ -26,11 +29,11 @@
 }
 
 .red {
-  background-color: #ff0000;
+  background-color: $red;
 }
 
 .green {
-  background-color: #33cc33;
+  background-color: $green;
 }
 
 .main-background {
