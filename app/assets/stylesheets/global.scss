@@ -1,3 +1,5 @@
+$white: #ffffff;
+
 @font-face {
   font-family: "cityscape";
   src: asset-url("cityscape");
@@ -42,7 +44,7 @@
 .index-title {
   font-size: 35px;
   padding-left: 8px;
-  color: #ffffff;
+  color: $white;
 }
 
 .title-bar-left {
@@ -54,7 +56,7 @@
 }
 
 .main-title > a {
-  font-family: "will-harris-reg"
+  font-family: "will-harris-reg";
 }
 
 .title-bar-right {
@@ -86,7 +88,7 @@ a {
 }
 
 .registration {
-  border-right: 2px solid #ffffff;
+  border-right: 2px solid $white;
   padding-right: 7%;
   padding-top: 7%;
 }
@@ -105,12 +107,12 @@ a {
 
 .microhood-link a {
   font-family: 'Fjalla One', sans-serif;
-  color: #ffffff;
+  color: $white;
   font-size: 25px;
 }
 
 .create-microhood-review-link a {
-  color: #ffffff;
+  color: $white;
   font-family: 'Fjalla One', sans-serif;
   font-size: 25px;
 }
@@ -124,17 +126,17 @@ ul {
 }
 
 .microhood-title {
-  color: #ffffff;
+  color: $white;
   padding-left: 10px;
 }
 
 .description {
-  color: #ffffff;
+  color: $white;
   padding-left: 10px;
 }
 
 .reviews-for {
-  color: #ffffff;
+  color: $white;
   padding-left: 10px;
 }
 
@@ -181,7 +183,7 @@ ul {
 }
 
 label {
-  color: #ffffff;
+  color: $white;
   margin-left: 1em;
 }
 
@@ -190,5 +192,5 @@ label {
 }
 
 li {
-  color: #ffffff;
+  color: $white;
 }
