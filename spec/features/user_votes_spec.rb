@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature 'user votes', js:true do
-  scenario 'user upvotes once' do
+  scenario 'authenticated user upvotes once' do
     user = FactoryGirl.create(:user)
     login_as(user, scope: :user)
     microhood = FactoryGirl.create(:microhood)
@@ -10,7 +10,7 @@ feature 'user votes', js:true do
     click_button 'Upvote'
     expect(page).to have_content 'Vote count: 1'
   end
-  scenario 'usr upvotes twice which removes vote' do
+  scenario 'authenticated user upvotes twice which removes vote' do
     user = FactoryGirl.create(:user)
     login_as(user, scope: :user)
     microhood = FactoryGirl.create(:microhood)
@@ -21,7 +21,7 @@ feature 'user votes', js:true do
     expect(page).to have_content 'Vote count: 0'
   end
 
-  scenario 'user upvotes then switches to downvote' do
+  scenario 'authenticated user upvotes then switches to downvote' do
     user = FactoryGirl.create(:user)
     login_as(user, scope: :user)
     microhood = FactoryGirl.create(:microhood)
