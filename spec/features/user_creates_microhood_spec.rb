@@ -22,7 +22,7 @@ feature 'user creates a microhood' do
     visit root_path
     login_as(user, scope: :user)
     click_link('Create and Review a New Microhood')
-    select 'West Roxbury', from: 'microhood_neighborhood_id'
+    select 'West Roxbury', from: 'microhood-neighborhood-id'
     fill_in('Name', with: 'Hooood')
     fill_in('Street', with: 'Hooood St')
     fill_in('Zip', with: '10000')
@@ -35,7 +35,7 @@ feature 'user creates a microhood' do
     user = FactoryGirl.create(:user)
     login_as(user, scope: :user)
     visit new_microhood_path
-    select 'West Roxbury', from: 'microhood_neighborhood_id'
+    select 'West Roxbury', from: 'microhood-neighborhood-id'
     fill_in('Street', with: 'Hooood St')
     fill_in('Zip', with: '10000')
     click_button('Add Microhood')
@@ -46,7 +46,7 @@ feature 'user creates a microhood' do
   scenario 'unauthenticated user attempts to create microhood' do
     user = FactoryGirl.create(:user)
     visit new_microhood_path
-    select 'West Roxbury', from: 'microhood_neighborhood_id'
+    select 'West Roxbury', from: 'microhood-neighborhood-id'
     fill_in('Name', with: 'Hooood')
     fill_in('Street', with: 'Hooood St')
     fill_in('Zip', with: '10000')

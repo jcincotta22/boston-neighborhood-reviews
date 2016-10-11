@@ -1,5 +1,5 @@
-$index_title_color: #ffffff;
-$opacity_rgba_var: rgba(0, 0, 0, .2);
+$index-title-color: #ffffff;
+$opacity-rgba-var: rgba(0, 0, 0, .2);
 
 .title-li {
   display: inline-block;
@@ -8,7 +8,7 @@ $opacity_rgba_var: rgba(0, 0, 0, .2);
 .index-title {
   font-size: 35px;
   padding-left: 8px;
-  color: $index_title_color;
+  color: $index-title-color;
 }
 
 .title-bar-left {
@@ -29,7 +29,7 @@ $opacity_rgba_var: rgba(0, 0, 0, .2);
 }
 
 .main-background {
-  background: url(https://upload.wikimedia.org/wikipedia/commons/7/77/Old_State_House_Boston_Massachusetts2.jpg);
+  background: url(https://upload.wikimedia.org/wikipedia/commons/7/77/Old-State-House-Boston-Massachusetts2.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -38,18 +38,18 @@ $opacity_rgba_var: rgba(0, 0, 0, .2);
 
 .microhood-link a {
   font-family: 'Fjalla One', sans-serif;
-  color: $index_title_color;
+  color: $index-title-color;
   font-size: 25px;
 }
 
 .create-microhood-review-link a {
-  color: $index_title_color;
+  color: $index-title-color;
   font-family: 'Fjalla One', sans-serif;
   font-size: 25px;
 }
 
 .callout {
-  background: $opacity_rgba_var;
+  background: $opacity-rgba-var;
 }
 
 ul {
@@ -57,17 +57,17 @@ ul {
 }
 
 .microhood-title {
-  color: $index_title_color;
+  color: $index-title-color;
   padding-left: 10px;
 }
 
 .description {
-  color: $index_title_color;
+  color: $index-title-color;
   padding-left: 10px;
 }
 
 .reviews-for {
-  color: $index_title_color;
+  color: $index-title-color;
   padding-left: 10px;
 }
 
@@ -114,43 +114,43 @@ ul {
 }
 
 label {
-  color: $index_title_color;
+  color: $index-title-color;
   margin-left: 1em;
 }
 
 .review-page {
-  background: $opacity_rgba_var;
+  background: $opacity-rgba-var;
 }
 
 li {
-  color: $index_title_color;
+  color: $index-title-color;
 }
 
-.microhood_neighborhood_id {
+.microhood-neighborhood-id {
   width: 15em;
 }
 
 .new-registration {
-  width: 15em;
   margin-left: 5px;
+  width: 15em;
 }
 
 .edit-registration {
-  width: 15em;
   margin-left: 5px;
+  width: 15em;
 }
 
 .edit-password {
-  width: 15em;
   margin-left: 5px;
+  width: 15em;
 }
 
 .new-password {
-  width: 15em;
   margin-left: 5px;
+  width: 15em;
 }
 
 .log-in {
-  width: 15em;
   margin-left: 5px;
+  width: 15em;
 }
