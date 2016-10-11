@@ -1,5 +1,5 @@
 $white: #ffffff;
-$red: red;
+$red: #ff0000;
 $opacity-rgba-var: rgba(0, 0, 0, 0.2);
 
 @font-face {
@@ -81,6 +81,7 @@ h1 {
 a {
   font-family: "Typography_Times";
   font-style: bold;
+  text-shadow: 2px 2px 5px $red;
 }
 
 .flexbox {
@@ -91,10 +92,10 @@ a {
 
 .registration {
   border-right: 2px solid $white;
+  overflow: hidden;
   padding-right: 20px;
   padding-top: 7%;
   white-space: nowrap;
-  overflow: hidden;
 }
 
 .logout {
