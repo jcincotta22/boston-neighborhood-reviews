@@ -10,9 +10,10 @@ RSpec.describe ReviewAlertMailer, type: :mailer do
       expect(mail.to).to eq([review.microhood.user.email])
       expect(mail.from).to eq(["no_reply@microhood.com"])
     end
-
-    it "renders the body" do
+    it "body of mail is as expected" do
       expect(mail.body.encoded).to match("Hello #{review.microhood.user.first_name}, #{review.microhood.name} was just reviewed!")
+    end
+    it "renders the body" do
       mail.deliver
       expect(ActionMailer::Base.deliveries.size).to eq(1)
     end

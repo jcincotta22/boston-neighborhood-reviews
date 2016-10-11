@@ -7,7 +7,6 @@ feature 'user adds review to microhood' do
     visit root_path
     login_as(user, scope: :user)
     click_link("#{microhoods.first.street}")
-    expect(page).to have_content("Reviews for #{microhoods.first.street}")
     fill_in('review_title', with: 'Ratings for Main St')
     fill_in('review_safety_rating', with: 4)
     fill_in('review_schools_rating', with: 4)
@@ -69,6 +68,5 @@ feature 'user adds review to microhood' do
     expect(page).to have_content 'Food entertainment must be less than or equal to 5'
     expect(page).to have_content 'Public transport must be less than or equal to 5'
     expect(page).to have_content 'Safety rating must be less than or equal to 5'
-
   end
 end
