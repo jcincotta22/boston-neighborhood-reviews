@@ -1,5 +1,5 @@
 $white: #ffffff;
-$opacity-rgba-var: rgba(0, 0, 0, .2);
+$opacity-rgba-var: rgba(0, 0, 0, 0.2);
 
 .title-li {
   display: inline-block;
@@ -124,10 +124,6 @@ label {
 
 li {
   color: $white;
-}
-
-.microhood_neighborhood_id {
-  width: 15em;
 }
 
 .new-registration {
