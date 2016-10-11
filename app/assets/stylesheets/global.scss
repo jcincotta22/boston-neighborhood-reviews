@@ -1,3 +1,6 @@
+$white: #ffffff;
+$opacity-rgba-var: rgba(0, 0, 0, 0.2);
+
 .title-li {
   display: inline-block;
 }
@@ -5,7 +8,7 @@
 .index-title {
   font-size: 35px;
   padding-left: 8px;
-  color: #ffffff;
+  color: $white;
 }
 
 .title-bar-left {
@@ -35,18 +38,18 @@
 
 .microhood-link a {
   font-family: 'Fjalla One', sans-serif;
-  color: #ffffff;
+  color: $white;
   font-size: 25px;
 }
 
 .create-microhood-review-link a {
-  color: #ffffff;
+  color: $white;
   font-family: 'Fjalla One', sans-serif;
   font-size: 25px;
 }
 
 .callout {
-  background: rgba(0, 0, 0, .2);
+  background: $opacity-rgba-var;
 }
 
 ul {
@@ -54,17 +57,17 @@ ul {
 }
 
 .microhood-title {
-  color: #ffffff;
+  color: $white;
   padding-left: 10px;
 }
 
 .description {
-  color: #ffffff;
+  color: $white;
   padding-left: 10px;
 }
 
 .reviews-for {
-  color: #ffffff;
+  color: $white;
   padding-left: 10px;
 }
 
@@ -82,7 +85,7 @@ ul {
   position: relative;
 }
 
-.input-group-field {
+.input-group {
   margin-left: 5px;
   width: 15em;
 }
@@ -106,14 +109,39 @@ ul {
 }
 
 label {
-  color: #ffffff;
+  color: $white;
   margin-left: 1em;
 }
 
 .review-page {
-  background: rgba(0, 0, 0, 0.2);
+  background: $opacity-rgba-var;
 }
 
 li {
-  color: #ffffff;
+  color: $white;
+}
+
+.new-registration {
+  margin-left: 5px;
+  width: 15em;
+}
+
+.edit-registration {
+  margin-left: 5px;
+  width: 15em;
+}
+
+.edit-password {
+  margin-left: 5px;
+  width: 15em;
+}
+
+.new-password {
+  margin-left: 5px;
+  width: 15em;
+}
+
+.log-in {
+  margin-left: 5px;
+  width: 15em;
 }
