@@ -8,5 +8,6 @@ feature 'user votes', js:true do
     review = FactoryGirl.create(:review, microhood: microhood)
     visit microhood_path(microhood)
     click_button 'Upvote'
+    expect(page).to have_content 'Vote count: 1'
   end
 end
