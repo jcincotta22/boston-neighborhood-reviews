@@ -40,7 +40,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'rspec-rails'
   gem 'capybara'
-  gem "capybara-webkit", "1.10.1"
+  gem "capybara-webkit", "1.11.1"
   gem 'launchy'
   gem 'factory_girl'
   gem 'valid_attribute'

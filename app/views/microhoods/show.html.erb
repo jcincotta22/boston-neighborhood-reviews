@@ -78,6 +78,10 @@
       <%= f.label 'Description' %>
       <%= f.text_field :body, class: 'input-group-field' %>
     </div>
+    <div class='input-group'>
+      <%= f.submit 'Add Review', class: 'button' %>
+    </div>
+  </div>
   <% end %>
   <% if !@current_user.nil? %>
     <% if @current_user.id == @microhood.user_id || @current_user.admin == true%>
