@@ -53,39 +53,39 @@
     <% end %>
   <% end %>
   <div class='form'>
-    <%= form_for([@microhood, @review]) do |f| %>
-    <div class='input-group select'>
-        <%= f.label :title %>
-        <%= f.text_field :title %>
-    </div>
-    <div class='input-group'>
-      <%= f.label 'Safety Rating' %>
-      <%= f.number_field :safety_rating, class: 'input-group-field' %>
-    </div>
-    <div class='input-group'>
-      <%= f.label 'School Rating' %>
-      <%= f.number_field :schools_rating, class: 'input-group-field' %>
-    </div>
+    <%= form_for [@microhood, @review] do |f| %>
+      <div class='input-group'>
+        <%= f.label :title%>
+        <%= f.text_field :title, class: 'input-group-field' %>
+      </div>
+      <div class='input-group'>
+        <%= f.label 'Safety Rating' %>
+        <%= f.number_field :safety_rating, class: 'input-group-field' %>
+      </div>
+      <div class='input-group'>
+        <%= f.label 'School Rating' %>
+        <%= f.number_field :schools_rating, class: 'input-group-field' %>
+      </div>
 
-    <div class='input-group'>
-      <%= f.label 'Food and Entertainment' %>
-      <%= f.number_field :food_entertainment, class: 'input-group-field'%>
-    </div>
+      <div class='input-group'>
+        <%= f.label 'Food and Entertainment' %>
+        <%= f.number_field :food_entertainment, class: 'input-group-field'%>
+      </div>
 
-    <div class='input-group'>
-      <%= f.label 'Public Transportation' %>
-      <%= f.number_field :public_transport, class: 'input-group-field'%>
-    </div>
+      <div class='input-group'>
+        <%= f.label 'Public Transportation' %>
+        <%= f.number_field :public_transport, class: 'input-group-field'%>
+      </div>
 
-    <div class='input-group'>
-      <%= f.label 'Description' %>
-      <%= f.text_field :body, class: 'input-group-field' %>
-    </div>
-    <div class='input-group'>
-      <%= f.submit 'Add Review', class: 'button' %>
-    </div>
+      <div class='input-group'>
+        <%= f.label 'Description' %>
+        <%= f.text_field :body, class: 'input-group-field' %>
+      </div>
+      <div class='input-group'>
+        <%= f.submit 'Add Review', class: 'button' %>
+      </div>
+    <% end %>
   </div>
-  <% end %>
   <% if !@current_user.nil? %>
     <% if @current_user.id == @microhood.user_id || @current_user.admin == true%>
       <br></br>
