@@ -23,9 +23,9 @@
   <% end %>
   <div class='form'>
     <%= form_for [@microhood, @review] do |f| %>
-    <div class='microhood-form-title'>
-        <%= f.label :title %>
-        <%= f.text_field :title %>
+    <div class='input-group'>
+        <%= f.label :title%>
+        <%= f.text_field :title, class: 'input-group-field' %>
     </div>
     <div class='input-group'>
       <%= f.label 'Safety Rating' %>
