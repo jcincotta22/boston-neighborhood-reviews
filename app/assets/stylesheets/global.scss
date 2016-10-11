@@ -2,6 +2,12 @@
   display: inline-block;
 }
 
+.index-title {
+  font-size: 35px;
+  padding-left: 8px;
+  color: #ffffff;
+}
+
 .title-bar-left {
   margin-top: 20px;
   font-size: 35px;
@@ -25,4 +31,102 @@
 
 .green {
   background-color: #33CC33;
+}
+
+.main-background {
+  background: url(https://upload.wikimedia.org/wikipedia/commons/7/77/Old_State_House_Boston_Massachusetts2.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.microhood-link a {
+  font-family: 'Fjalla One', sans-serif;
+  color: #ffffff;
+  font-size: 25px;
+}
+
+.create-microhood-review-link a {
+  color: #ffffff;
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 25px;
+}
+
+.callout {
+  background: rgba(0, 0, 0, .2);
+}
+
+ul {
+  list-style-type: none;
+}
+
+.microhood-title {
+  color: #ffffff;
+  padding-left: 10px;
+}
+
+.description {
+  color: #ffffff;
+  padding-left: 10px;
+}
+
+.reviews-for {
+  color: #ffffff;
+  padding-left: 10px;
+}
+
+.edit-link {
+  display: inline-block;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  position: relative;
+}
+
+.delete-link {
+  display: inline-block;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  position: relative;
+}
+
+.input-group-field {
+  margin-left: 5px;
+  width: 15em;
+}
+
+.microhood-form-title {
+  padding-left: 5px;
+  width: 15em;
+}
+
+.add-review {
+  margin-left: 1em;
+}
+
+.edit-microhood-link {
+  display: inline-block;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  position: relative;
+}
+
+.delete-microhood-link {
+  display: inline-block;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  position: relative;
+}
+
+label {
+  color: #ffffff;
+  margin-left: 1em;
+}
+
+.review-page {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+li {
+  color: #ffffff;
 }
