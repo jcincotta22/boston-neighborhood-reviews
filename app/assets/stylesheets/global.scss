@@ -77,15 +77,15 @@ a {
 }
 
 #flexbox {
-  display: -webkit-box;
   -webkit-box-orient: horizontal;
+  display: -webkit-box;
   height: 100%;
 }
 
 #registration {
-  padding-top: 7%;
-  border-right: 2px solid white;
+  border-right: 2px solid #ffffff;
   padding-right: 7%;
+  padding-top: 7%;
 }
 
 #logout {
