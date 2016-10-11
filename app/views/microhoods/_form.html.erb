@@ -14,9 +14,9 @@
     </div>
   <% end %>
 
-  <div class="input-group select">
+  <div class="input-group-select">
       <%= f.label :neighborhood %>
-      <%= f.select :neighborhood_id, options_for_select(@neighborhoods_collection), class: "input-group" %>
+      <%= f.select :neighborhood_id, options_for_select(@neighborhoods_collection), class: "input-group-field" %>
   </div>
   <div class="input-group">
     <%= f.label :name %>
