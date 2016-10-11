@@ -9,6 +9,7 @@ feature 'user votes', js:true do
     visit microhood_path(microhood)
     click_button 'Upvote'
     expect(page).to have_content 'Vote count: 1'
+    page.find(".up-button-#{review.id}")[:class].include?("green")
   end
   scenario 'authenticated user upvotes twice which removes vote' do
     user = FactoryGirl.create(:user)
@@ -19,6 +20,7 @@ feature 'user votes', js:true do
     click_button 'Upvote'
     click_button 'Upvote'
     expect(page).to have_content 'Vote count: 0'
+    page.find(".up-button-#{review.id}")[:class].exclude?("green")
   end
 
   scenario 'authenticated user upvotes then switches to downvote' do
