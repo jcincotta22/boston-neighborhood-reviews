@@ -2,7 +2,6 @@
 $(document).ready(function () {
   $(".like").submit(function (event) {
     event.preventDefault();
-    document.getElementsByTagName('h1')[0].innerText = "hello";
     var string = $(this).find('input[name="review[vote_count]"]').val();
     var microhood_id = $(this).find('input[name="review[microhood_id]"]').val();
     var id = $(this).find('input[name="review[id]"]').val();
