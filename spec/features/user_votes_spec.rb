@@ -11,6 +11,7 @@ feature 'user votes', js:true do
     expect(page).to have_content 'Vote count: 1'
     page.find(".up-button-#{review.id}")[:class].include?("green")
   end
+  
   scenario 'authenticated user upvotes twice which removes vote' do
     user = FactoryGirl.create(:user)
     login_as(user, scope: :user)
