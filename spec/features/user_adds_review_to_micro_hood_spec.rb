@@ -7,7 +7,6 @@ feature 'user adds review to microhood' do
     visit root_path
     login_as(user, scope: :user)
     click_link("#{microhoods.first.street}")
-    expect(page).to have_content("Reviews for #{microhoods.first.street}")
     fill_in('review_title', with: 'Ratings for Main St')
     fill_in('review_safety_rating', with: 4)
     fill_in('review_schools_rating', with: 4)
@@ -21,6 +20,7 @@ feature 'user adds review to microhood' do
     expect(page).to have_content('School Rating')
     expect(page).to have_content('Food and entertainment')
     expect(page).to have_content('Public Transportation')
+    expect(page).to have_content('Review added successfully!')
     expect(page).to have_content('It is a nice place.  askdjhfasdkjfhasdkfjhasdkfjhasdfkjhasdfkjhasdfkasdflaskjfalsdkfjasdlfkjasdf')
   end
 
@@ -50,5 +50,23 @@ feature 'user adds review to microhood' do
     fill_in('review_body', with: 'It is a nice place.  askdjhfasdkjfhasdkfjhasdkfjhasdfkjhasdfkjhasdfkasdflaskjfalsdkfjasdlfkjasdf')
     click_button('Add Review')
     expect(page).to have_content 'User must be signed in'
+  end
+
+  scenario 'authorized user tries to submit a rating over 5' do
+    microhood = FactoryGirl.create(:microhood)
+    user = FactoryGirl.create(:user)
+    login_as(user, scope: :user)
+    visit "/microhoods/#{microhood.id}"
+    fill_in :review_title, with: 'Ratings for Microhood'
+    fill_in :review_safety_rating, with: 6
+    fill_in :review_schools_rating, with: 6
+    fill_in :review_public_transport, with: 6
+    fill_in(:review_food_entertainment, with: 6)
+    fill_in :review_body, with: 'It is a nice place.  askdjhfasdkjfhasdkfjhasdkfjhasdfkjhasdfkjhasdfkasdflaskjfalsdkfjasdlfkjasdf'
+    click_button('Add Review')
+    expect(page).to have_content 'Safety rating must be less than or equal to 5'
+    expect(page).to have_content 'Food entertainment must be less than or equal to 5'
+    expect(page).to have_content 'Public transport must be less than or equal to 5'
+    expect(page).to have_content 'Safety rating must be less than or equal to 5'
   end
 end

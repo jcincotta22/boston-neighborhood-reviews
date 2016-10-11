@@ -43,8 +43,8 @@ group :development, :test do
   gem 'factory_girl'
   gem 'valid_attribute'
   gem 'shoulda-matchers', require: false
-  gem "dotenv-rails"
-
+  gem 'dotenv-rails'
+  gem 'mailcatcher'
 end
 
 group :test do

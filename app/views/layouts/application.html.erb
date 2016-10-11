@@ -5,19 +5,24 @@
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
-    <%= javascript_include_tag "vendor/modernizr" %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body class="main-background">
     <div data-sticky-container>
     <div class="title-bar" data-sticky data-options="marginTop:0;" style="width:100%">
-      <div class="title-bar-right">
-        <ul class="hmenu">
-          <%= render 'devise/menu/registration_items' %> /
-          <%= render 'devise/menu/login_items' %>
-        </ul>
+      <div class="title-bar-right flexbox">
+        <div class='registration'>
+          <ul class="hmenu">
+            <%= render 'devise/menu/registration_items' %>
+          </ul>
+        </div>
+        <div class='logout'>
+            <ul class="hmenu">
+              <%= render 'devise/menu/login_items' %>
+            </ul>
+        </div>
       </div>
-      <div class="title-bar-left"> <%= link_to "Boston Microhoods", root_path %></div>
+      <div class="title-bar-left main-title"> <%= link_to "Boston Microhoods", root_path %></div>
     </div>
   </div>
       <% flash.each do |key, value| %>
