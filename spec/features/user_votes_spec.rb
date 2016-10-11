@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature 'user votes', js:true do
-  scenario 'user votes' do
+  scenario 'user upvotes once' do
     user = FactoryGirl.create(:user)
     login_as(user, scope: :user)
     microhood = FactoryGirl.create(:microhood)
@@ -10,4 +10,5 @@ feature 'user votes', js:true do
     click_button 'Upvote'
     expect(page).to have_content 'Vote count: 1'
   end
+
 end
