@@ -1,4 +1,5 @@
 $white: #ffffff;
+$opacity-rgba-var: rgba(0, 0, 0, 0.2);
 
 @font-face {
   font-family: "cityscape";
@@ -34,8 +35,6 @@ $white: #ffffff;
   font-family: "Typography_Times";
   src: asset-url("Typography_Times_Regular");
 }
-
-
 
 .title-li {
   display: inline-block;
@@ -118,7 +117,7 @@ a {
 }
 
 .callout {
-  background: rgba(0, 0, 0, .2);
+  background: $opacity-rgba-var;
 }
 
 ul {
@@ -154,13 +153,8 @@ ul {
   position: relative;
 }
 
-.input-group-field {
+.input-group {
   margin-left: 5px;
-  width: 15em;
-}
-
-.microhood-form-title {
-  padding-left: 5px;
   width: 15em;
 }
 
@@ -188,9 +182,34 @@ label {
 }
 
 .review-page {
-  background: rgba(0, 0, 0, 0.2);
+  background: $opacity-rgba-var;
 }
 
 li {
   color: $white;
+}
+
+.new-registration {
+  margin-left: 5px;
+  width: 15em;
+}
+
+.edit-registration {
+  margin-left: 5px;
+  width: 15em;
+}
+
+.edit-password {
+  margin-left: 5px;
+  width: 15em;
+}
+
+.new-password {
+  margin-left: 5px;
+  width: 15em;
+}
+
+.log-in {
+  margin-left: 5px;
+  width: 15em;
 }

@@ -1,7 +1,7 @@
-<div class="review-page">
-  <h1 class="reviews-for">Reviews for <%= @microhood.street %></h1>
+<div class='review-page'>
+  <h1 class='reviews-for'>Reviews for <%= @microhood.street %></h1>
   <% @reviews.each do |review| %>
-    <h5 class="microhood-title"> <%= review.title %> </h5>
+    <h5 class='microhood-title'> <%= review.title %> </h5>
     <ul>
       <li>Overall Rating: <%= review.rating %></li>
       <li>Safety Rating: <%= review.safety_rating %></li>
@@ -9,13 +9,13 @@
       <li>Food and Entertainment Rating: <%= review.food_entertainment %></li>
       <li>Public Transportation Rating: <%= review.public_transport %></li>
     </ul>
-      <p class="description">Description: <%= review.body %> </p>
+      <p class='description'>Description: <%= review.body %> </p>
     <% if @current_user.id == review.user_id || @current_user.admin == true%>
-      <div class="edit-link"><%= form_for([@microhood,review], method: :get, url: edit_microhood_review_path(@microhood, review) ) do |f| %>
+      <div class='edit-link'><%= form_for([@microhood,review], method: :get, url: edit_microhood_review_path(@microhood, review) ) do |f| %>
         <%= f.submit 'Edit Review'%>
       <% end %>
       </div>
-      <div class="delete-link"><%= form_for([@microhood,review], method: 'delete') do |f| %>
+      <div class='delete-link'><%= form_for([@microhood,review], method: 'delete') do |f| %>
          <%= f.submit 'Delete Review'%>
        <% end %>
      </div>
@@ -23,9 +23,9 @@
   <% end %>
   <div class='form'>
     <%= form_for [@microhood, @review] do |f| %>
-    <div class='microhood-form-title'>
-        <%= f.label :title %>
-        <%= f.text_field :title %>
+    <div class='input-group'>
+      <%= f.label :title %>
+      <%= f.text_field :title, class: 'input-group-field'  %>
     </div>
     <div class='input-group'>
       <%= f.label 'Safety Rating' %>
@@ -55,11 +55,11 @@
   <% if !@current_user.nil? %>
     <% if @current_user.id == @microhood.user_id || @current_user.admin == true%>
       <br></br>
-      <div class="edit-microhood-link"><%= form_for(@microhood, method: :get, url: edit_microhood_path(@microhood) ) do |f| %>
+      <div class='edit-microhood-link'><%= form_for(@microhood, method: :get, url: edit_microhood_path(@microhood) ) do |f| %>
         <%= f.submit 'Edit Microhood'%>
       <% end %>
       </div>
-      <div class="delete-microhood-link"><%= form_for(@microhood, method: 'delete') do |f| %>
+      <div class='delete-microhood-link'><%= form_for(@microhood, method: 'delete') do |f| %>
         <%= f.submit 'Delete Microhood'%>
       <% end %>
       </div>
