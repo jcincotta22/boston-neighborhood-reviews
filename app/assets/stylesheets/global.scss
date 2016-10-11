@@ -1,14 +1,11 @@
-$index_title_color: #ffffff;
-$opacity_rgba_var: rgba(0, 0, 0, .2);
-
 .title-li {
   display: inline-block;
 }
 
 .index-title {
-  color: $index_title_color;
   font-size: 35px;
   padding-left: 8px;
+  color: #ffffff;
 }
 
 .title-bar-left {
@@ -29,27 +26,27 @@ $opacity_rgba_var: rgba(0, 0, 0, .2);
 }
 
 .main-background {
-  background: url("https://upload.wikimedia.org/wikipedia/commons/7/77/Old_State_House_Boston_Massachusetts2.jpg");
-  background-attachment: fixed;
-  background-position: center;
+  background: url(https://upload.wikimedia.org/wikipedia/commons/7/77/Old_State_House_Boston_Massachusetts2.jpg);
   background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .microhood-link a {
-  color: $index_title_color;
   font-family: 'Fjalla One', sans-serif;
+  color: #ffffff;
   font-size: 25px;
 }
 
 .create-microhood-review-link a {
-  color: $index_title_color;
+  color: #ffffff;
   font-family: 'Fjalla One', sans-serif;
   font-size: 25px;
 }
 
 .callout {
-  background: $opacity_rgba_var;
+  background: rgba(0, 0, 0, .2);
 }
 
 ul {
@@ -57,17 +54,17 @@ ul {
 }
 
 .microhood-title {
-  color: $index_title_color;
+  color: #ffffff;
   padding-left: 10px;
 }
 
 .description {
-  color: $index_title_color;
+  color: #ffffff;
   padding-left: 10px;
 }
 
 .reviews-for {
-  color: $index_title_color;
+  color: #ffffff;
   padding-left: 10px;
 }
 
@@ -114,14 +111,14 @@ ul {
 }
 
 label {
-  color: $index_title_color;
+  color: #ffffff;
   margin-left: 1em;
 }
 
 .review-page {
-  background: $opacity_rgba_var;
+  background: rgba(0, 0, 0, 0.2);
 }
 
 li {
-  color: $index_title_color;
+  color: #ffffff;
 }
