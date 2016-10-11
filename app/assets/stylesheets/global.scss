@@ -1,4 +1,5 @@
 $white: #ffffff;
+$red: red;
 $opacity-rgba-var: rgba(0, 0, 0, 0.2);
 
 @font-face {
@@ -52,6 +53,7 @@ $opacity-rgba-var: rgba(0, 0, 0, 0.2);
   font-size: 68px;
   margin-top: 20px;
   position: absolute;
+  text-shadow: 2px 2px 5px $red;
 }
 
 .main-title > a {
@@ -88,8 +90,10 @@ a {
 
 .registration {
   border-right: 2px solid $white;
-  padding-right: 7%;
+  padding-right: 20px;
   padding-top: 7%;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .logout {
@@ -212,4 +216,13 @@ li {
 .log-in {
   margin-left: 5px;
   width: 15em;
+}
+
+a {
+  text-shadow: 2px 2px 5px $red;
+}
+
+h1 {
+
+  text-shadow: 2px 2px 5px $red;
 }
