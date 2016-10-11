@@ -21,6 +21,7 @@ feature 'user adds review to microhood' do
     expect(page).to have_content('School Rating')
     expect(page).to have_content('Food and entertainment')
     expect(page).to have_content('Public Transportation')
+    expect(page).to have_content('Review added successfully!')
     expect(page).to have_content('It is a nice place.  askdjhfasdkjfhasdkfjhasdkfjhasdfkjhasdfkjhasdfkasdflaskjfalsdkfjasdlfkjasdf')
   end
 

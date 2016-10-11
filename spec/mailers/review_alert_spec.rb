@@ -17,5 +17,4 @@ RSpec.describe ReviewAlertMailer, type: :mailer do
       expect(ActionMailer::Base.deliveries.size).to eq(1)
     end
   end
-
 end

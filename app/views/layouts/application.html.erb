@@ -12,11 +12,17 @@
   <body>
     <div data-sticky-container>
     <div class="title-bar" data-sticky data-options="marginTop:0;" style="width:100%">
-      <div class="title-bar-right">
-        <ul class="hmenu">
-          <%= render 'devise/menu/registration_items' %> /
-          <%= render 'devise/menu/login_items' %>
-        </ul>
+      <div class="title-bar-right" id="flexbox">
+        <div id='registration'>
+          <ul class="hmenu">
+            <%= render 'devise/menu/registration_items' %>
+          </ul>
+        </div>
+        <div id='logout'>
+            <ul class="hmenu">
+              <%= render 'devise/menu/login_items' %>
+            </ul>
+        </div>
       </div>
       <div class="title-bar-left">Boston Microhoods</div>
     </div>
