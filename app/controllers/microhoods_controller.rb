@@ -2,7 +2,7 @@
 class MicrohoodsController < ApplicationController
   def index
     search = Microhood.search(params[:search])
-    @search = search == Microhood.all
+    @search = search != Microhood.all
     @microhoods = search.reverse_order
   end
 
