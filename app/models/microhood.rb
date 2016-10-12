@@ -6,4 +6,12 @@ class Microhood < ActiveRecord::Base
   has_many :reviews
   belongs_to :user
   belongs_to :neighborhood
+
+  def self.search(search)
+    if search
+      where('street ILIKE ? OR name ILIKE ?', "%#{search}%", "%#{search}%").all
+    else
+      all
+    end
+  end
 end
