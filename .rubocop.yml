@@ -1,9 +1,7 @@
-ruby:
-  config_file: .rubocop.yml
-
 AllCops:
   Exclude:
     - db/schema.rb
+    - models
 
 # This is the default configuration file. Enabling and disabling is configured
 # in separate files. This file adds all other parameters apart from Enabled.
@@ -407,7 +405,6 @@ Style/Copyright:
 
 Style/DocumentationMethod:
   RequireForNonPublicMethods: false
->>>>>>> master
   Enabled: false
 
 # Multi-line method chaining should be done with leading dots.

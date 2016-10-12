@@ -32,6 +32,7 @@ gem 'devise'
 gem 'carrierwave'
 gem "fog-aws"
 gem 'foundation-rails'
+gem 'selenium-webdriver'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -39,12 +40,13 @@ group :development, :test do
   gem 'pry-rails'
   gem 'rspec-rails'
   gem 'capybara'
+  gem "capybara-webkit", "1.11.1"
   gem 'launchy'
   gem 'factory_girl'
   gem 'valid_attribute'
   gem 'shoulda-matchers', require: false
-  gem "dotenv-rails"
-
+  gem 'dotenv-rails'
+  gem 'mailcatcher'
 end
 
 group :test do

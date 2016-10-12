@@ -27,11 +27,10 @@ FactoryGirl.define do
   factory :review do
     user
     microhood
-    sequence(:rating) { |n| n + 0.5 }
-    sequence(:safety_rating) { |n| n }
-    sequence(:schools_rating) { |n| n }
-    sequence(:food_entertainment) { |n| n }
-    sequence(:public_transport) { |n| n }
+    safety_rating 4
+    schools_rating 5
+    food_entertainment 4
+    public_transport 4
     sequence(:title) { |n| "This awesome review #{n}" }
     sequence(:body) { |n| "Check it out guys! I love this microhood so much!!!!!!!!!!!#{n}" }
   end

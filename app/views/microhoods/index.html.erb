@@ -1,9 +1,18 @@
 <div>
 <h1 class="index-title">Boston Microhoods</h1>
+<%= form_tag microhoods_path, method: 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", name: nil %>
+  </p>
+<% end %>
+
+<div class='callout'>
+<h1 class='index-title'>Boston Microhoods</h1>
 <% @microhoods.each do |microhood| %>
-  <ul class="microhood-link">
+  <ul class='microhood-link'>
     <%= link_to "#{microhood.street}, #{microhood.zip}", microhood %>
   </ul>
 <% end %>
-<ul class="create-microhood-review-link"> <%= link_to "Create and Review a New Microhood", new_microhood_path %> </ul>
+<ul class='create-microhood-review-link'> <%= link_to 'Create and Review a New Microhood', new_microhood_path %> </ul>
 </div>

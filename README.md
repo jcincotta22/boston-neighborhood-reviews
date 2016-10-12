@@ -6,3 +6,9 @@
 
 
 Boston neighborhood reviews
+
+add later in rspec mailer test test WIP:
+
+first_name = microhood.reviews.last.microhood.user.first_name
+expect(last_email.to).to eq([user.email])
+expect(mail.body.encoded).to match("Hello #{first_name}, #{microhood.name} was just reviewed!")

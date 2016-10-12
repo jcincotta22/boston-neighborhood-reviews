@@ -1,7 +1,8 @@
+
 <div class="review-page">
   <h1 class="reviews-for">Reviews for <%= @microhood.street %></h1>
   <% @reviews.each do |review| %>
-    <h5 class="microhood-title"> <%= review.title %> </h5>
+    <h5 class='microhood-title'> <%= review.title %> </h5>
     <ul>
       <li>Overall Rating: <%= review.rating %></li>
       <li>Safety Rating: <%= review.safety_rating %></li>
@@ -9,57 +10,91 @@
       <li>Food and Entertainment Rating: <%= review.food_entertainment %></li>
       <li>Public Transportation Rating: <%= review.public_transport %></li>
     </ul>
-      <p class="description">Description: <%= review.body %> </p>
+      <p class='description'>Description: <%= review.body %> </p>
+    <% if !@current_user.nil? %>
+      <% if Vote.where(user_id: @current_user.id).where(review_id: review.id).exists? %>
+        <% if Vote.where(user_id: @current_user.id).where(review_id: review.id)[0].value == 1 %>
+          <% @user_upvote_class = 'green' %>
+          <% @user_downvote_class = '' %>
+        <% elsif Vote.where(user_id: @current_user.id).where(review_id: review.id)[0].value == 0 %>
+          <% @user_downvote_class = '' %>
+          <% @user_upvote_class = '' %>
+        <% else %>
+          <% @user_downvote_class = 'red' %>
+          <% @user_upvote_class = '' %>
+        <% end %>
+      <% end %>
+    <% end %>
+    <% if !@current_user.nil? %>
+      <%= form_for([@microhood, review], remote: true, html: {class:"like"}) do |f| %>
+        <%= f.hidden_field :microhood_id, value: @microhood.id %>
+        <%= f.hidden_field :id, value: review.id %>
+        <%= f.submit "Upvote", class: "up-button-#{review.id} #{@user_upvote_class}"%>
+      <% end %>
+
+      <%= form_for([@microhood, review], remote: true, html: {class:"dislike"}) do |f| %>
+        <%= f.hidden_field :microhood_id, value: @microhood.id %>
+        <%= f.hidden_field :id, value: review.id %>
+        <%= f.submit "Downvote", class: "down-button-#{review.id} #{@user_downvote_class}" %>
+      <% end %>
+    <% end %>
+    <div class=<%="vote_count-#{review.id}" %>>
+       Vote count: <%= review.total_vote_count %>
+    </div>
+
     <% if @current_user.id == review.user_id || @current_user.admin == true%>
-      <div class="edit-link"><%= form_for([@microhood,review], method: :get, url: edit_microhood_review_path(@microhood, review) ) do |f| %>
+      <div class='edit-link'><%= form_for([@microhood,review], method: :get, url: edit_microhood_review_path(@microhood, review) ) do |f| %>
         <%= f.submit 'Edit Review'%>
       <% end %>
       </div>
-      <div class="delete-link"><%= form_for([@microhood,review], method: 'delete') do |f| %>
+
+      <div class='delete-link'><%= form_for([@microhood,review], method: 'delete') do |f| %>
          <%= f.submit 'Delete Review'%>
        <% end %>
-     </div>
+      </div>
     <% end %>
   <% end %>
+
   <div class='form'>
     <%= form_for [@microhood, @review] do |f| %>
-    <div class='input-group'>
-        <%= f.label :title%>
-        <%= f.text_field :title, class: 'input-group-field' %>
-    </div>
-    <div class='input-group'>
-      <%= f.label 'Safety Rating' %>
-      <%= f.number_field :safety_rating, class: 'input-group-field' %>
-    </div>
-    <div class='input-group'>
-      <%= f.label 'School Rating' %>
-      <%= f.number_field :schools_rating, class: 'input-group-field' %>
-    </div>
-    <div class='input-group'>
-      <span><%= f.label 'Food and Entertainment' %></span>
-      <%= f.number_field :food_entertainment, class: 'input-group-field'%>
-    </div>
-    <div class='input-group'>
-      <%= f.label 'Public Transportation' %>
-      <%= f.number_field :public_transport, class: 'input-group-field'%>
-    </div>
-    <div class='input-group'>
-      <%= f.label 'Description' %>
-      <%= f.text_field :body, class: 'input-group-field' %>
-    </div>
+      <div class='input-group'>
+        <%= f.label :title %>
+        <%= f.text_field :title, class: 'input-group-field'  %>
+      </div>
+      <div class='input-group'>
+        <%= f.label 'Safety Rating' %>
+        <%= f.number_field :safety_rating, class: 'input-group-field' %>
+      </div>
+      <div class='input-group'>
+        <%= f.label 'School Rating' %>
+        <%= f.number_field :schools_rating, class: 'input-group-field' %>
+      </div>
+      <div class='input-group'>
+        <span><%= f.label 'Food and Entertainment' %></span>
+        <%= f.number_field :food_entertainment, class: 'input-group-field'%>
+      </div>
+      <div class='input-group'>
+        <%= f.label 'Public Transportation' %>
+        <%= f.number_field :public_transport, class: 'input-group-field'%>
+      </div>
+      <div class='input-group'>
+        <%= f.label 'Description' %>
+        <%= f.text_field :body, class: 'input-group-field' %>
+      </div>
       <div class='add-review'>
         <%= f.submit 'Add Review', class: 'button' %>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
+
   <% if !@current_user.nil? %>
     <% if @current_user.id == @microhood.user_id || @current_user.admin == true%>
       <br></br>
-      <div class="edit-microhood-link"><%= form_for(@microhood, method: :get, url: edit_microhood_path(@microhood) ) do |f| %>
+      <div class='edit-microhood-link'><%= form_for(@microhood, method: :get, url: edit_microhood_path(@microhood) ) do |f| %>
         <%= f.submit 'Edit Microhood'%>
       <% end %>
       </div>
-      <div class="delete-microhood-link"><%= form_for(@microhood, method: 'delete') do |f| %>
+      <div class='delete-microhood-link'><%= form_for(@microhood, method: 'delete') do |f| %>
         <%= f.submit 'Delete Microhood'%>
       <% end %>
       </div>
