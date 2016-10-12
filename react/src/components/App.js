@@ -14,7 +14,7 @@ class App extends Component {
 
   getIndex() {
     $.ajax({
-      url: 'api/microhoods',
+      url: '/api/microhoods',
       contentType: 'application/json'
     })
     .done(data => {
