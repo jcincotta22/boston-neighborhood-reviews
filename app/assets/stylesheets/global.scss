@@ -1,3 +1,7 @@
+
+$red: #ff0000;
+$green: #33cc33;
+
 $white: #ffffff;
 $red: #ff0000;
 $opacity-rgba-var: rgba(0, 0, 0, 0.2);
@@ -69,6 +73,7 @@ $opacity-rgba-var: rgba(0, 0, 0, 0.2);
   margin-bottom: -7px;
 }
 
+<<<<<<< HEAD
 h1 {
   font-family: "assassin";
   text-shadow: 2px 2px 5px $red;
@@ -100,6 +105,14 @@ a {
 
 .logout {
   padding-top: 7%;
+}
+
+.red {
+  background-color: $red;
+}
+
+.green {
+  background-color: $green;
 }
 
 .main-background {
