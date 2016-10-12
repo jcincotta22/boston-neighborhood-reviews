@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'user creates a microhood' do
+feature 'user creates a microhood', js: true do
   before { neighborhood = Neighborhood.create(name: 'West Roxbury') }
 
   scenario 'user visits the page of microhoods, clicks create microhood' do
