@@ -8,7 +8,6 @@ class ReviewAlertMailer < ActionMailer::Base
   def new_review(review)
     @review = review
 
-    mail(to: @review.microhood.user.email,
-        subject: "New Review")
+    mail(to: @review.microhood.user.email, subject: "New Review")
   end
 end
