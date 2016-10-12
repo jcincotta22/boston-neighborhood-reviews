@@ -3,7 +3,7 @@ require "rails_helper"
 RSpec.describe ReviewAlertMailer, type: :mailer do
   ActionMailer::Base.deliveries = []
   describe "new_review" do
-    let(:review) { FactoryGirl.create(:review)}
+    let(:review) { FactoryGirl.create(:review) }
     let(:mail) { ReviewAlertMailer.new_review(review) }
     it "renders the headers" do
       expect(mail.subject).to eq("New Review")

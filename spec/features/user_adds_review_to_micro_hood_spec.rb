@@ -37,7 +37,6 @@ feature 'user adds review to microhood' do
     fill_in 'review_body', with: ''
     click_button('Add Review')
     find_field('review_title').value.should eq 'Ratings for Microhood'
-    save_and_open_page
     expect(page).to have_content('Body is too short (minimum is 50 characters)')
   end
 

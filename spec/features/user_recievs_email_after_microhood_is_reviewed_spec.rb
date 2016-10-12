@@ -4,7 +4,7 @@ feature 'User is notified via email after review of their created microhood' do
   let(:user) { FactoryGirl.create(:user) }
   let(:microhood) { FactoryGirl.create(:microhood) }
   context do
-    before {
+    before do
       ActionMailer::Base.deliveries = []
       login_as(user, scope: :user)
       visit microhood_path(microhood)
@@ -15,7 +15,7 @@ feature 'User is notified via email after review of their created microhood' do
       fill_in('review_public_transport', with: 3)
       fill_in('review_body', with: 'It is a nice place.  askdjhfasdkjfhasdkfjhasdkfjhasdfkjhasdfkjhasdfkasdflaskjfalsdkfjasdlfkjasdf')
       click_button('Add Review')
-    }
+    end
     scenario 'user reviews microhood' do
       expect(ActionMailer::Base.deliveries.size).to eq(1)
     end
