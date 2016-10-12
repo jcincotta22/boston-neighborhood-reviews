@@ -13,6 +13,7 @@ class ReviewsController < ApplicationController
     @review.user_id = @user.try(:id)
 
     if @review.save
+      @review.alert_creator
       @review.update_attribute(:rating, overall_rating(@review.schools_rating, @review.public_transport, @review.food_entertainment, @review.safety_rating))
       flash[:notice] = 'Review added successfully!'
       redirect_to microhood_path(@microhood)
