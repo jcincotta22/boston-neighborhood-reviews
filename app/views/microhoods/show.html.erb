@@ -1,5 +1,5 @@
 <div class="review-page">
-  <h1 class="reviews-for">Reviews for<%= @microhood.street %></h1>
+  <h1 class="reviews-for">Reviews for <%= @microhood.street %></h1>
   <% @reviews.each do |review| %>
     <h5 class='microhood-title'> <%= review.title %> </h5>
     <ul>
