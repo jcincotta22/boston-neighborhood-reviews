@@ -1,5 +1,14 @@
+$white: #ffffff;
+$opacity-rgba-var: rgba(0, 0, 0, 0.2);
+
 .title-li {
   display: inline-block;
+}
+
+.index-title {
+  font-size: 35px;
+  padding-left: 8px;
+  color: $white;
 }
 
 .title-bar-left {
@@ -17,4 +26,122 @@
 
 .hmenu {
   margin-bottom: -7px;
+}
+
+.main-background {
+  background: url(https://upload.wikimedia.org/wikipedia/commons/7/77/Old_State_House_Boston_Massachusetts2.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.microhood-link a {
+  font-family: 'Fjalla One', sans-serif;
+  color: $white;
+  font-size: 25px;
+}
+
+.create-microhood-review-link a {
+  color: $white;
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 25px;
+}
+
+.callout {
+  background: $opacity-rgba-var;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.microhood-title {
+  color: $white;
+  padding-left: 10px;
+}
+
+.description {
+  color: $white;
+  padding-left: 10px;
+}
+
+.reviews-for {
+  color: $white;
+  padding-left: 10px;
+}
+
+.edit-link {
+  display: inline-block;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  position: relative;
+}
+
+.delete-link {
+  display: inline-block;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  position: relative;
+}
+
+.input-group {
+  margin-left: 5px;
+  width: 15em;
+}
+
+.add-review {
+  margin-left: 1em;
+}
+
+.edit-microhood-link {
+  display: inline-block;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  position: relative;
+}
+
+.delete-microhood-link {
+  display: inline-block;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  position: relative;
+}
+
+label {
+  color: $white;
+  margin-left: 1em;
+}
+
+.review-page {
+  background: $opacity-rgba-var;
+}
+
+li {
+  color: $white;
+}
+
+.new-registration {
+  margin-left: 5px;
+  width: 15em;
+}
+
+.edit-registration {
+  margin-left: 5px;
+  width: 15em;
+}
+
+.edit-password {
+  margin-left: 5px;
+  width: 15em;
+}
+
+.new-password {
+  margin-left: 5px;
+  width: 15em;
+}
+
+.log-in {
+  margin-left: 5px;
+  width: 15em;
 }
