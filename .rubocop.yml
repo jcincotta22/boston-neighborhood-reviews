@@ -1,5 +1,4 @@
-ruby:
-  config_file: .rubocop.yml
+
 
 AllCops:
   Exclude:
@@ -407,7 +406,6 @@ Style/Copyright:
 
 Style/DocumentationMethod:
   RequireForNonPublicMethods: false
->>>>>>> master
   Enabled: false
 
 # Multi-line method chaining should be done with leading dots.
