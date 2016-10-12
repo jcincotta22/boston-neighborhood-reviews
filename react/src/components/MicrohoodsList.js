@@ -18,11 +18,9 @@ const MicrohoodsList = props => {
 
   return (
     <div className="row microhood-list">
-      <div className="small-11 small-centered columns">
-        <ul>
-          {microhoods}
-        </ul>
-      </div>
+      <ul className="microhood-list">
+        {microhoods}
+      </ul>
     </div>
   );
 };
