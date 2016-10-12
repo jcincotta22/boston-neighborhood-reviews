@@ -4,7 +4,7 @@ if Rails.env.development?
 else
   ActionMailer::Base.smtp_settings = {
     user_name: 'app57789087@heroku.com',
-    password: ENV['SENDGRID_PW']
+    password: ENV['SENDGRID_PW'],
     domain: 'https://boston-neighborhoods-reviews.herokuapp.com/',
     address: 'smtp.sendgrid.net',
     port: 587,
