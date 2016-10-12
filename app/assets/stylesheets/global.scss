@@ -122,8 +122,8 @@ a {
 }
 
 body {
+  background: $opacity-rgba-var;
   background-size: cover;
-  background: $opacity-rgba-var
 }
 
 .microhood-link a {
@@ -139,7 +139,7 @@ body {
 }
 
 .callout {
-  background: rgba(0, 0, 0, 0);
+  background: $opacity-rgba-var;
 }
 
 ul {
@@ -241,15 +241,15 @@ li {
 }
 
 h2 {
+  color: $white;
   font-size: 1.5rem;
   margin-left: 12px;
-  color: $white;
 }
 
 .password-text {
   color: $white;
-  font-size: 10px;
   display: inline-block;
+  font-size: 10px;
 }
 
 .current-password-field {
@@ -258,19 +258,19 @@ h2 {
 
 .cancel {
   color: $white;
-  margin-left: 13px;
   font-size: 15px;
+  margin-left: 13px;
 }
 
 .buttons {
   margin-left: 12px;
-  padding-bottom: 0px;
+  padding-bottom: 0;
 }
 
 .unhappy {
   color: $white;
-  margin-left: 15px;
   font-size: 10px;
+  margin-left: 15px;
 }
 
 .profile-pic {
