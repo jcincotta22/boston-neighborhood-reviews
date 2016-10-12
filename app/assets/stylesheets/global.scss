@@ -116,7 +116,7 @@ ul {
 
 label {
   color: $white;
-  margin-left: 1em;
+  margin-left: 4px;
 }
 
 .review-page {
@@ -152,15 +152,51 @@ li {
   width: 15em;
 }
 
-.new-hood-form {
-  // background: $opacity-rgba-var;
-}
-
 .edit-user-form {
-  // background: $opacity-rgba-var;
   width: 15em;
 }
 
 .background-overlay {
   background: $opacity-rgba-var;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-left: 12px;
+  color: $white;
+}
+
+.password-text {
+  color: $white;
+  font-size: 10px;
+  display: inline-block;
+}
+
+.current-password-field {
+  width: 239px;
+}
+
+.cancel {
+  color: $white;
+  margin-left: 13px;
+  font-size: 15px;
+}
+
+.buttons {
+  margin-left: 12px;
+  padding-bottom: 0px;
+}
+
+.unhappy {
+  color: $white;
+  margin-left: 15px;
+  font-size: 10px;
+}
+
+.profile-pic {
+  color: $white;
+}
+
+.last-name {
+  padding-bottom: 5px;
 }
