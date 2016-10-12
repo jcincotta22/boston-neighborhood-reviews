@@ -1,6 +1,5 @@
-
 <div class="review-page">
-  <h1 class="reviews-for">Reviews for <%= @microhood.street %></h1>
+  <h1 class="reviews-for">Reviews for<%= @microhood.street %></h1>
   <% @reviews.each do |review| %>
     <h5 class='microhood-title'> <%= review.title %> </h5>
     <ul>
@@ -29,19 +28,20 @@
       <%= form_for([@microhood, review], remote: true, html: {class:"like"}) do |f| %>
         <%= f.hidden_field :microhood_id, value: @microhood.id %>
         <%= f.hidden_field :id, value: review.id %>
-        <%= f.submit "Upvote", class: "up-button-#{review.id} #{@user_upvote_class}"%>
+        <%= f.submit "Upvote", class: "up-button-#{review.id} #{@user_upvote_class} upvote"%>
       <% end %>
 
       <%= form_for([@microhood, review], remote: true, html: {class:"dislike"}) do |f| %>
         <%= f.hidden_field :microhood_id, value: @microhood.id %>
         <%= f.hidden_field :id, value: review.id %>
-        <%= f.submit "Downvote", class: "down-button-#{review.id} #{@user_downvote_class}" %>
+        <%= f.submit "Downvote", class: "down-button-#{review.id} #{@user_downvote_class} downvote" %>
       <% end %>
     <% end %>
-    <div class=<%="vote_count-#{review.id}" %>>
-       Vote count: <%= review.total_vote_count %>
+    <div class='vote-count'>
+      <div class=<%="vote_count-#{review.id}"%>>
+         Vote count: <%= review.total_vote_count %>
+      </div>
     </div>
-
     <% if @current_user.id == review.user_id || @current_user.admin == true%>
       <div class='edit-link'><%= form_for([@microhood,review], method: :get, url: edit_microhood_review_path(@microhood, review) ) do |f| %>
         <%= f.submit 'Edit Review'%>
