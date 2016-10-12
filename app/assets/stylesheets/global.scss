@@ -3,7 +3,7 @@ $red: #ff0000;
 $green: #33cc33;
 $white: #ffffff;
 $red: #ff0000;
-$opacity-rgba-var: rgba(0, 0, 0, 0.2);
+$opacity-rgba-var: rgba(0, 0, 0, 0.3);
 
 @font-face {
   font-family: "cityscape";
@@ -279,4 +279,9 @@ h2 {
 
 .last-name {
   padding-bottom: 5px;
+}
+
+.search-bar {
+  width: 300px;
+  margin-left: 11px;
 }
