@@ -40,7 +40,7 @@ feature 'user can create an account' do
     user = User.last
     expect(user.first_name).to eq('Frank')
     expect(user.email).to eq('fjlanasa@gmail.com')
-    expect(user.profile_photo.file.file).to eq('/Users/Jscincotta/challenges/boston-neighborhood-reviews/public/uploads/user/profile_photo/1/file.pdf')
+    expect(user.profile_photo.file).to be_a(CarrierWave::SanitizedFile)
   end
 
 
