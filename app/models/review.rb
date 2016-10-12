@@ -11,11 +11,6 @@ class Review < ActiveRecord::Base
   belongs_to :user
   belongs_to :microhood
 
-  after_create do |review|
-    rating = ((safety_rating + schools_rating + food_entertainment + public_transport) / 4.0).round(1)
-    review.update_attribute(:rating, rating)
-  end
-
   def alert_creator
     if save
       ReviewAlertMailer.new_review(self).deliver
