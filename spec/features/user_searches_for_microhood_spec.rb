@@ -2,8 +2,8 @@ require 'rails_helper'
 
 feature 'user searches for microhoods' do
   scenario 'user searches for microhood by name' do
-    microhood = FactoryGirl.create(:microhood, name: 'Frank\'s Microhood', street: 'Fox Run')
-    microhoods = FactoryGirl.create_list(:microhood, 3)
+    FactoryGirl.create(:microhood, name: 'Frank\'s Microhood', street: 'Fox Run')
+    FactoryGirl.create_list(:microhood, 3)
     visit root_path
     fill_in :search, with: 'Frank'
     click_button 'Search'
@@ -12,8 +12,8 @@ feature 'user searches for microhoods' do
   end
 
   scenario 'user searches for microhood by street' do
-    microhood = FactoryGirl.create(:microhood, name: 'Frank\'s Microhood', street: 'Fox Run')
-    microhoods = FactoryGirl.create_list(:microhood, 3)
+    FactoryGirl.create(:microhood, name: 'Frank\'s Microhood', street: 'Fox Run')
+    FactoryGirl.create_list(:microhood, 3)
     visit root_path
     fill_in :search, with: 'Fox'
     click_button 'Search'
@@ -31,7 +31,7 @@ feature 'user searches for microhoods' do
   end
 
   scenario 'search results index page should not update automatically' do
-    microhoods  = FactoryGirl.create_list(:microhood, 3)
+    microhoods = FactoryGirl.create_list(:microhood, 3)
     visit root_path
     fill_in :search, with: 'Main St'
     click_button 'Search'

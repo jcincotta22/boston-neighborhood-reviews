@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import App from './components/App';
 
 $(function() {
-  if(document.getElementById('app') != null){
+  if(document.getElementById('app') !== null){
     ReactDOM.render(
       <div>
         <App />

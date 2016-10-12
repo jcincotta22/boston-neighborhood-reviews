@@ -9,7 +9,7 @@ feature 'User Views all microhood', js: true do
   end
 
   scenario 'Microhoods index page updates after 5 seconds' do
-    microhoods = FactoryGirl.create_list(:microhood, 2)
+    FactoryGirl.create_list(:microhood, 2)
     visit root_path
     new_microhood = FactoryGirl.create(:microhood)
     expect(page).to have_no_content(new_microhood.street)
