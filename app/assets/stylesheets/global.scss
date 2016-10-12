@@ -1,7 +1,6 @@
-
+$background-image: url(https://upload.wikimedia.org/wikipedia/commons/7/77/Old_State_House_Boston_Massachusetts2.jpg);
 $red: #ff0000;
 $green: #33cc33;
-
 $white: #ffffff;
 $red: #ff0000;
 $opacity-rgba-var: rgba(0, 0, 0, 0.2);
@@ -115,11 +114,16 @@ a {
 }
 
 .main-background {
-  background: url(https://upload.wikimedia.org/wikipedia/commons/7/77/Old_State_House_Boston_Massachusetts2.jpg);
+  background: $background-image;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
+}
+
+body {
+  background: $opacity-rgba-var;
+  background-size: cover;
 }
 
 .microhood-link a {
@@ -196,11 +200,7 @@ ul {
 
 label {
   color: $white;
-  margin-left: 1em;
-}
-
-.review-page {
-  background: $opacity-rgba-var;
+  margin-left: 4px;
 }
 
 li {
@@ -230,4 +230,53 @@ li {
 .log-in {
   margin-left: 5px;
   width: 15em;
+}
+
+.edit-user-form {
+  width: 15em;
+}
+
+.background-overlay {
+  background: $opacity-rgba-var;
+}
+
+h2 {
+  color: $white;
+  font-size: 1.5rem;
+  margin-left: 12px;
+}
+
+.password-text {
+  color: $white;
+  display: inline-block;
+  font-size: 10px;
+}
+
+.current-password-field {
+  width: 239px;
+}
+
+.cancel {
+  color: $white;
+  font-size: 15px;
+  margin-left: 13px;
+}
+
+.buttons {
+  margin-left: 12px;
+  padding-bottom: 0;
+}
+
+.unhappy {
+  color: $white;
+  font-size: 10px;
+  margin-left: 15px;
+}
+
+.profile-pic {
+  color: $white;
+}
+
+.last-name {
+  padding-bottom: 5px;
 }

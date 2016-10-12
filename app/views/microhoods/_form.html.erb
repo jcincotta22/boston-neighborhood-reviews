@@ -1,7 +1,5 @@
-
-<div class='form'>
-  <%= form_for @microhood, html: {class: 'form'} do |f| %>
-
+<div class="new-hood-form">
+  <%= form_for @microhood, html: {class: "form"} do |f| %>
   <% if @microhood.errors.any? %>
     <div id='error_explanation'>
       <h2><%= pluralize(@microhood.errors.count, 'error') %> prohibited this microhood from being saved:</h2>
