@@ -3,7 +3,7 @@ $red: #ff0000;
 $green: #33cc33;
 $white: #ffffff;
 $red: #ff0000;
-$opacity-rgba-var: rgba(0, 0, 0, 0.2);
+$opacity-rgba-var: rgba(0, 0, 0, 0.3);
 
 @font-face {
   font-family: "cityscape";
@@ -149,11 +149,15 @@ ul {
 .microhood-title {
   color: $white;
   padding-left: 10px;
+  margin-top: 30px;
+  margin-left: 11px;
+  font-size: 31px;
 }
 
 .description {
   color: $white;
   padding-left: 10px;
+  margin-left: 10px;
 }
 
 .reviews-for {
@@ -215,6 +219,10 @@ li {
 .edit-registration {
   margin-left: 5px;
   width: 15em;
+}
+
+.edit-user-registration {
+  background: $opacity-rgba-var;
 }
 
 .edit-password {
@@ -279,4 +287,25 @@ h2 {
 
 .last-name {
   padding-bottom: 5px;
+}
+
+.review-page {
+  background: $opacity-rgba-var;
+}
+
+.vote-count {
+  color: $white;
+  margin-left: 21px;
+}
+
+.upvote {
+  margin-left: 21px;
+}
+
+.downvote {
+  margin-left: 21px;
+}
+
+.form {
+  margin-left: 15px;
 }

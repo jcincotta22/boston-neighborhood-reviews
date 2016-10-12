@@ -1,3 +1,4 @@
+<div class='edit-user-registration'>
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 <div class='edit-user-form input-group'>
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -53,3 +54,4 @@
   <p class='unhappy'>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'buttons' %></p>
 
   <%= link_to "Back", :back %>
+</div>
