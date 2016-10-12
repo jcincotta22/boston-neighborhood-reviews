@@ -1,3 +1,7 @@
+
+$red: #ff0000;
+$green: #33cc33;
+
 $white: #ffffff;
 $opacity-rgba-var: rgba(0, 0, 0, 0.2);
 
@@ -26,6 +30,14 @@ $opacity-rgba-var: rgba(0, 0, 0, 0.2);
 
 .hmenu {
   margin-bottom: -7px;
+}
+
+.red {
+  background-color: $red;
+}
+
+.green {
+  background-color: $green;
 }
 
 .main-background {
