@@ -25,6 +25,25 @@ feature 'user can create an account' do
     expect(page).to have_content 'Welcome! You have signed up successfully.'
     expect(page).to have_content 'Microhood'
   end
+  scenario 'user successfully creates new account' do
+    visit '/users/sign_up'
+
+    fill_in 'First Name', with: 'Frank'
+    fill_in 'Last Name', with: 'LaNasa'
+    fill_in 'Email', with: 'fjlanasa@gmail.com'
+    attach_file("user_profile_photo", Rails.root + "spec/fixtures/file.pdf")
+    fill_in 'Password', with: 'password1!'
+    fill_in 'Password confirmation', with: 'password1!'
+    click_button 'Sign up'
+    expect(page).to have_content 'Welcome! You have signed up successfully.'
+    expect(page).to have_content 'Microhood'
+    user = User.last
+    expect(user.first_name).to eq('Frank')
+    expect(user.email).to eq("fjlanasa@gmail.com")
+    binding.pry
+    expect(user.profile_photo.file.file).to eq("/Users/Jscincotta/challenges/boston-neighborhood-reviews/public/uploads/user/profile_photo/1/file.pdf")
+  end
+
 
   scenario 'user attempts to sign in email already in use' do
     visit 'users/sign_up'
