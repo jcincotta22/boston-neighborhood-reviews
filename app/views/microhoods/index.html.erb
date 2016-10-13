@@ -1,27 +1,26 @@
-<div>
-<h1 class="index-title">Boston Microhoods</h1>
-<%= form_tag microhoods_path, method: 'get' do %>
-  <p>
-    <%= text_field_tag :search, params[:search], class: 'search-bar' %>
-    <%= submit_tag "Search", name: nil, class: 'search-button' %>
-  </p>
-<% end %>
 <div class='callout'>
-  <h1 class='index-title'>Boston Microhoods</h1>
-    <% @microhoods.each do |microhood| %>
-      <ul class='microhood-link'>
-        <%= link_to "#{microhood.street}, #{microhood.zip}", microhood %>
-      </ul>
-    <% end %>
+  <h1 class="index-title">Boston Microhoods</h1>
+  <%= form_tag microhoods_path, method: 'get' do %>
+    <p>
+      <div class='input-group'>
+          <%= text_field_tag :search, params[:search], class: 'search-bar input-group-field' %>
+          <div class='input-group-button'>
+          <%= submit_tag "Search", name: nil, class: 'button' %>
+        </div>
+    </div>
+    </p>
+  <% end %>
+  <% if @search %>
+    <div>
+      <% @microhoods.each do |microhood| %>
+        <ul class='microhood-link'>
+          <%= link_to "#{microhood.name}", microhood %>
+        </ul>
+      <% end %>
+    </div>
+  <% else %>
+    <div id='app'>
+    </div>
+  <% end %>
   <ul class='create-microhood-review-link'> <%= link_to 'Create and Review a New Microhood', new_microhood_path %> </ul>
-    <%= form_tag microhoods_path, method: 'get' do %>
-      <p>
-        <div class='input-group'>
-            <%= text_field_tag :search, params[:search], class: 'search-bar input-group-field' %>
-            <div class='input-group-button'>
-            <%= submit_tag "Search", name: nil, class: 'button' %>
-          </div>
-      </div>
-      </p>
-    <% end %>
 </div>

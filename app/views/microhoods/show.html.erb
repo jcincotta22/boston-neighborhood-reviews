@@ -1,4 +1,9 @@
 <div class="review-page">
+  <h1><%= @microhood.name %><h1>
+  <ul>
+    <li><%= "#{@microhood.street}, #{@microhood.neighborhood.name}, #{@microhood.zip}" %></li>
+    <li><%= @microhood.description %>
+  </ul>
   <h1 class="reviews-for">Reviews for <%= @microhood.street %></h1>
   <% @reviews.each do |review| %>
     <h5 class='microhood-title'> <%= review.title %> </h5>
@@ -10,6 +15,7 @@
       <li>Public Transportation Rating: <%= review.public_transport %></li>
     </ul>
       <p class='description'>Description: <%= review.body %> </p>
+
     <% if !@current_user.nil? %>
       <% if Vote.where(user_id: @current_user.id).where(review_id: review.id).exists? %>
         <% if Vote.where(user_id: @current_user.id).where(review_id: review.id)[0].value == 1 %>
@@ -24,6 +30,7 @@
         <% end %>
       <% end %>
     <% end %>
+
     <% if !@current_user.nil? %>
       <%= form_for([@microhood, review], remote: true, html: {class:"like"}) do |f| %>
         <%= f.hidden_field :microhood_id, value: @microhood.id %>
@@ -37,6 +44,7 @@
         <%= f.submit "Downvote", class: "down-button-#{review.id} #{@user_downvote_class} downvote" %>
       <% end %>
     <% end %>
+
     <div class='vote-count'>
       <div class=<%="vote_count-#{review.id}"%>>
          Vote count: <%= review.total_vote_count %>
