@@ -123,6 +123,12 @@ a {
   text-shadow: 2px 2px 5px $red;
 }
 
+.a-link {
+  color: $white;
+  font-family: "Typography_Times";
+  text-shadow: 2px 2px 5px $black;
+}
+
 .flexbox {
   -webkit-box-orient: horizontal;
   display: -webkit-box;
