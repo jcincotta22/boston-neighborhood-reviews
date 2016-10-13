@@ -1,12 +1,11 @@
 require 'rails_helper'
 
-feature 'user adds review to microhood', js: true do
+feature 'user adds review to microhood' do
   scenario 'user visits microhood show page and adds a review' do
-    microhoods = FactoryGirl.create_list(:microhood, 2)
+    microhood = FactoryGirl.create(:microhood)
     user = FactoryGirl.create(:user)
-    visit root_path
+    visit microhood_path(microhood)
     login_as(user, scope: :user)
-    click_link("#{microhoods.last.name}")
     fill_in('review_title', with: 'Ratings for Main St')
     fill_in('review_safety_rating', with: 4)
     fill_in('review_schools_rating', with: 4)
