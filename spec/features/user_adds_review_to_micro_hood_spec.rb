@@ -6,7 +6,7 @@ feature 'user adds review to microhood' do
     user = FactoryGirl.create(:user)
     visit root_path
     login_as(user, scope: :user)
-    click_link("#{microhoods.first.street}")
+    click_link("#{microhoods.last.name}")
     fill_in('review_title', with: 'Ratings for Main St')
     fill_in('review_safety_rating', with: 4)
     fill_in('review_schools_rating', with: 4)
