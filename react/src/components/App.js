@@ -30,11 +30,8 @@ class App extends Component {
   render(){
 
     return(
-      <div className='callout'>
+      <div>
         <MicrohoodsList microhoods={this.state.microhoods} />
-        <div className='create-microhood-review-link'>
-          <a href='/microhoods/new'>Create and Review a New Microhood</a>
-        </div>
       </div>
     )
   }

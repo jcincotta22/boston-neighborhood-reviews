@@ -10,17 +10,17 @@
     </div>
     </p>
   <% end %>
-</div>
   <% if @search %>
-    <div class='callout'>
+    <div>
       <% @microhoods.each do |microhood| %>
         <ul class='microhood-link'>
           <%= link_to "#{microhood.name}", microhood %>
         </ul>
       <% end %>
-      <ul class='create-microhood-review-link'> <%= link_to 'Create and Review a New Microhood', new_microhood_path %> </ul>
     </div>
   <% else %>
     <div id='app'>
     </div>
   <% end %>
+  <ul class='create-microhood-review-link'> <%= link_to 'Create and Review a New Microhood', new_microhood_path %> </ul>
+</div>
