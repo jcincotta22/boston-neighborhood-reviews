@@ -20,7 +20,14 @@ rake db:create
 rake db:migrate
 rake db:test:prepare
 
-You'll need to incorporate a cloud-based storage service (like AWS) to store user profile information (such as profile picture).
+You'll need to incorporate a cloud-based storage service (like AWS) to store user profile information (such as profile picture).  The .gitignore file is already set up to ignore the .env file.  You'll want to put in (complete with your own values): COVERALLS_REPO_TOKEN, AWS_SECRET_ACCESS_KEY, AWS_KEY_ID, BUCKET
+
+To make sure you have all the necessary gems, run:
+
+gem install bundler
+bundle
+
+It is not uncommon for users to have configuration issues with Capybara-webkit.  To resolve these issues, this guide is a great resource: https://github.com/thoughtbot/capybara-webkit/wiki/Installing-Qt-and-compiling-capybara-webkit#xcode-80
 
 An email client will also need to be set up.  We recommend using Action Mailer.
 To work with the app locally, you'll want to start a rails server with this command in the terminal:
@@ -31,7 +38,7 @@ and visit http://localhost:3000/ once the server is running.  To use our deploye
 
 
 
-add later in rspec mailer test test WIP:
+<!-- add later in rspec mailer test test WIP:
 first_name = microhood.reviews.last.microhood.user.first_name
 expect(last_email.to).to eq([user.email])
-expect(mail.body.encoded).to match("Hello #{first_name}, #{microhood.name} was just reviewed!")
+expect(mail.body.encoded).to match("Hello #{first_name}, #{microhood.name} was just reviewed!") -->
