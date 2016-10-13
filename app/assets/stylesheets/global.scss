@@ -55,6 +55,7 @@ $alert-red: #F67975;
   color: $white;
 }
 
+
 .title-bar-left {
   bottom: 0;
   font-size: 68px;
@@ -74,6 +75,10 @@ $alert-red: #F67975;
 .title-bar-right {
   font-size: 24px;
   bottom: 0;
+}
+
+.title-bar {
+  background: rgba(0, 0, 0, 0.75);
 }
 
 .hmenu {
@@ -180,6 +185,14 @@ ul {
   position: relative;
 }
 
+.edit-button {
+  border-radius: 25px;
+  margin-left: 10%;
+}
+
+.delete-button {
+ border-radius: 25px;
+}
 .delete-link {
   display: inline-block;
   padding-bottom: 5px;
@@ -304,14 +317,19 @@ h2 {
 .vote-count {
   color: $white;
   margin-left: 21px;
+  margin-bottom: 25px;
 }
 
 .upvote {
   margin-left: 21px;
+  width: 8em;
+  border-radius: 25px;
 }
 
 .downvote {
   margin-left: 21px;
+  width: 8em;
+  border-radius: 25px;
 }
 
 .form {
@@ -338,4 +356,9 @@ h2 {
 
 .search-button {
   margin-left: 11px;
+}
+
+.profile-img {
+  height: 60px;
+  margin-top: 18px;
 }

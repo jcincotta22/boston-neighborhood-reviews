@@ -50,19 +50,16 @@
          Vote count: <%= review.total_vote_count %>
       </div>
     </div>
-
-    <% if !@current_user.nil? %>
-      <% if @current_user.id == review.user_id || @current_user.admin == true%>
-          <div class='edit-link'><%= form_for([@microhood,review], method: :get, url: edit_microhood_review_path(@microhood, review) ) do |f| %>
-            <%= f.submit 'Edit Review'%>
-            <% end %>
-          </div>
-
-          <div class='delete-link'><%= form_for([@microhood,review], method: 'delete') do |f| %>
-             <%= f.submit 'Delete Review'%>
-           <% end %>
-          </div>
+    <% if @current_user.id == review.user_id || @current_user.admin == true%>
+      <div class='edit-link'><%= form_for([@microhood,review], method: :get, url: edit_microhood_review_path(@microhood, review) ) do |f| %>
+        <%= f.submit 'Edit Review', class: 'edit-button' %>
       <% end %>
+      </div>
+
+      <div class='delete-link'><%= form_for([@microhood,review], method: 'delete') do |f| %>
+         <%= f.submit 'Delete Review', class: 'delete-button' %>
+       <% end %>
+      </div>
     <% end %>
   <% end %>
 
@@ -102,11 +99,11 @@
     <% if @current_user.id == @microhood.user_id || @current_user.admin == true%>
       <br></br>
       <div class='edit-microhood-link'><%= form_for(@microhood, method: :get, url: edit_microhood_path(@microhood) ) do |f| %>
-        <%= f.submit 'Edit Microhood'%>
+        <%= f.submit 'Edit Microhood', class: 'edit-button'%>
       <% end %>
       </div>
       <div class='delete-microhood-link'><%= form_for(@microhood, method: 'delete') do |f| %>
-        <%= f.submit 'Delete Microhood'%>
+        <%= f.submit 'Delete Microhood', class: 'delete-button'%>
       <% end %>
       </div>
     <% end %>
