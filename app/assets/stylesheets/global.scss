@@ -3,6 +3,7 @@ $red: #ff0000;
 $green: #33cc33;
 $white: #ffffff;
 $red: #ff0000;
+$alert-red: #F67975;
 $opacity-rgba-var: rgba(0, 0, 0, 0.2);
 
 @font-face {
@@ -285,14 +286,14 @@ h2 {
 }
 
 .flash-alert {
+  background-color: $alert-red;
+  border-radius: 9px;
+  color: $white;
   font-weight: bold;
-      color: #ffffff;
-      background-color: #F67975;
-      height: 58px;
-      text-align: center;
-      border-radius: 9px;
-      margin-left: auto;
-      margin-right: auto;
-      width: 103em;
-      overflow: inherit;
+  height: 58px;
+  margin-right: auto;
+  margin-left: auto;
+  overflow: inherit;
+  text-align: center;
+  width: 103em;
 }
