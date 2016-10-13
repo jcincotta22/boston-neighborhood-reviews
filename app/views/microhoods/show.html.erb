@@ -1,4 +1,9 @@
 <div class="review-page">
+  <h1><%= @microhood.name %><h1>
+  <ul>
+    <li><%= "#{@microhood.street}, #{@microhood.neighborhood.name}, #{@microhood.zip}" %></li>
+    <li><%= @microhood.description %>
+  </ul>
   <h1 class="reviews-for">Reviews for <%= @microhood.street %></h1>
   <% @reviews.each do |review| %>
     <h5 class='microhood-title'> <%= review.title %> </h5>

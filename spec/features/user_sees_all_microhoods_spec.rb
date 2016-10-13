@@ -21,5 +21,7 @@ feature 'User Views all microhood', js: true do
     new_microhood = FactoryGirl.create(:microhood)
     sleep(5)
     expect(page).to have_content(new_microhood.name)
+    expect(page).to have_content(microhoods.first.name)
+    expect(page).to have_content(microhoods.last.name)
   end
 end
