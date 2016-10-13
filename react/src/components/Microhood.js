@@ -5,7 +5,7 @@ const Microhood = props => {
   return(
     <li>
       <div className='microhood-link'>
-        <a href={path}>{props.street}, {props.zip}</a>
+        <a href={path}>{props.name}</a>
       </div>
     </li>
   );

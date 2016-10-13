@@ -19,7 +19,6 @@ class App extends Component {
     })
     .done(data => {
       this.setState({ microhoods: data.microhoods });
-      console.log('hey');
     })
   }
 
