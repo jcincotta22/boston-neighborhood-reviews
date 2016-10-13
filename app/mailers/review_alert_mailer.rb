@@ -1,3 +1,5 @@
+require 'sendgrid-ruby'
+
 class ReviewAlertMailer < ActionMailer::Base
   default from: "no_reply@microhood.com"
   # Subject can be set in your I18n file at config/locales/en.yml

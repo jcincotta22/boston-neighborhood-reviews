@@ -4,6 +4,8 @@ $green: #33cc33;
 $white: #ffffff;
 $red: #ff0000;
 $opacity-rgba-var: rgba(0, 0, 0, 0.3);
+$alert-red: #F67975;
+
 
 @font-face {
   font-family: "cityscape";
@@ -52,11 +54,14 @@ $opacity-rgba-var: rgba(0, 0, 0, 0.3);
 
 .title-bar-left {
   bottom: 0;
-  font-family: "will-harris-reg";
   font-size: 68px;
   margin-top: 20px;
   position: absolute;
   text-shadow: 2px 2px 5px $red;
+}
+
+.title-bar-left > a {
+  font-family: "will-harris-reg";
 }
 
 .main-title > a {
@@ -281,7 +286,24 @@ h2 {
   padding-bottom: 5px;
 }
 
+.flash-alert {
+  background-color: $alert-red;
+  border-radius: 9px;
+  color: $white;
+  font-weight: bold;
+  height: 58px;
+  margin-right: auto;
+  margin-left: auto;
+  overflow: inherit;
+  text-align: center;
+  width: 103em;
+}
+
 .search-bar {
   margin-left: 11px;
   width: 300px;
+}
+
+.search-button {
+  margin-left: 11px;
 }
