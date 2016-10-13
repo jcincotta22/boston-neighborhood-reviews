@@ -37,7 +37,9 @@ User authentication and authorization is done using the devise gem:
 bundle && rails generate devise:install && rails generate devise:views
 For a comprehensive guide to devise, https://github.com/plataformatec/devise
 
-An email client will also need to be set up.  We recommend using Action Mailer.
+An email client will also need to be set up. We recommend using SendGrid (production) (mailcatcher is for local) (EMAIL CLIENT).  When checking if mail on local is sent out, in terminal start up mailcatcher:
+mailcatcher
+
 To work with the app locally, you'll want to start a rails server with this command in the terminal:
 rails s
 
@@ -46,8 +48,3 @@ and visit http://localhost:3000/ once the server is running.  To use our deploye
 
 Features and Technologies:
 Registration and login.  These can be found at the top right of the main page.  Authentication was implemented using the devise gem.
-
-<!-- add later in rspec mailer test test WIP:
-first_name = microhood.reviews.last.microhood.user.first_name
-expect(last_email.to).to eq([user.email])
-expect(mail.body.encoded).to match("Hello #{first_name}, #{microhood.name} was just reviewed!") -->
