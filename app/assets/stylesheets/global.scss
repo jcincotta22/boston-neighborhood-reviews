@@ -49,18 +49,22 @@ $alert-red: #F67975;
   margin: 20px 10px;
 }
 
+
+
+h1.index-title {
+  font-size: 60px;
+  color: #2199E8;
+  text-shadow: 2px 2px 5px black;
+}
 .index-title {
-  font-size: 35px;
+  font-size: 50px;
   padding-left: 8px;
   color: $white;
 }
 
 
 .title-bar-left {
-  bottom: 0;
   font-size: 68px;
-  margin-top: 20px;
-  position: absolute;
   text-shadow: 2px 2px 5px $red;
 }
 
@@ -87,7 +91,23 @@ $alert-red: #F67975;
 
 h1 {
   font-family: "assassin";
-  text-shadow: 2px 2px 5px $red;
+  font-size: 60px;
+  color: #2199E8;
+  text-shadow: 2px 2px 5px black;
+}
+
+.microhood-name {
+  font-size: 60px;
+  color: #2199E8;
+  text-shadow: 2px 2px 5px black;
+  margin-left: 6px;
+
+}
+
+.microhood-stats {
+  color: $white;
+  font-family: "Typography_Times";
+  font-size: 25px;
 }
 
 .title-bar {
@@ -110,12 +130,12 @@ a {
   border-right: 2px solid $white;
   overflow: hidden;
   padding-right: 20px;
-  padding-top: 7%;
+  padding-top: 8%;
   white-space: nowrap;
 }
 
 .logout {
-  padding-top: 7%;
+  padding-top: 8%;
 }
 
 .red {
@@ -140,15 +160,17 @@ body {
 }
 
 .microhood-link a {
-  font-family: 'Fjalla One', sans-serif;
   color: $white;
-  font-size: 25px;
+  font-family: "Typography_Times";
+  font-size: 30px;
+  text-shadow: 2px 2px 5px black
 }
 
-.create-microhood-review-link a {
+.create-microhood-review-link{
   color: $white;
-  font-family: 'Fjalla One', sans-serif;
-  font-size: 25px;
+  font-family: "Typography_Times";
+  font-size: 30px;
+  text-shadow: 2px 2px 5px black;
 }
 
 .callout {
@@ -165,6 +187,7 @@ ul {
   margin-top: 30px;
   margin-left: 11px;
   font-size: 31px;
+  text-shadow: 2px 2px 5px black;
 }
 
 .description {
@@ -176,6 +199,7 @@ ul {
 .reviews-for {
   color: $white;
   padding-left: 10px;
+  font-size: 45px;
 }
 
 .edit-link {
@@ -225,11 +249,13 @@ ul {
 
 label {
   color: $white;
+  text-shadow: 2px 2px 5px black;
   margin-left: 4px;
 }
 
 li {
   color: $white;
+  font-family: "Typography_Times";
 }
 
 .new-registration {
@@ -361,4 +387,5 @@ h2 {
 .profile-img {
   height: 60px;
   margin-top: 18px;
+  margin-left: 25px;
 }

@@ -10,10 +10,11 @@
   <body class="main-background">
     <div data-sticky-container>
     <div class="title-bar" data-sticky data-options="marginTop:0;" style="width:100%">
+      <div class="title-bar-left main-title"> <%= link_to "Boston Microhoods", root_path %></div>
+      <% if current_user %>
+      <%= image_tag((current_user.profile_photo), class: "profile-img") %>
+      <% end %>
       <div class="title-bar-right flexbox">
-        <% if current_user %>
-        <%= image_tag((current_user.profile_photo), class: "profile-img") %>
-        <% end %>
         <div class='registration'>
           <ul class="hmenu">
             <%= render 'devise/menu/registration_items' %>
@@ -25,7 +26,6 @@
             </ul>
         </div>
       </div>
-      <div class="title-bar-left main-title"> <%= link_to "Boston Microhoods", root_path %></div>
     </div>
   </div>
   <% flash.each do |key, value| %>
