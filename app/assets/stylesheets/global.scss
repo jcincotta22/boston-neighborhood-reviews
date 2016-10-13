@@ -5,6 +5,8 @@ $white: #ffffff;
 $red: #ff0000;
 $opacity-rgba-var: rgba(0, 0, 0, 0.3);
 $alert-red: #F67975;
+$black: #000000;
+$title-blue: #2199E8;
 
 @font-face {
   font-family: "cityscape";
@@ -53,9 +55,10 @@ $alert-red: #F67975;
 
 h1.index-title {
   font-size: 60px;
-  color: #2199E8;
-  text-shadow: 2px 2px 5px black;
+  color: $title-blue;
+  text-shadow: 2px 2px 5px $black;
 }
+
 .index-title {
   font-size: 50px;
   padding-left: 8px;
@@ -92,14 +95,14 @@ h1.index-title {
 h1 {
   font-family: "assassin";
   font-size: 60px;
-  color: #2199E8;
-  text-shadow: 2px 2px 5px black;
+  color: $title-blue;
+  text-shadow: 2px 2px 5px $black;
 }
 
 .microhood-name {
   font-size: 60px;
-  color: #2199E8;
-  text-shadow: 2px 2px 5px black;
+  color: $title-blue;
+  text-shadow: 2px 2px 5px $black;
   margin-left: 6px;
 
 }
@@ -163,14 +166,14 @@ body {
   color: $white;
   font-family: "Typography_Times";
   font-size: 30px;
-  text-shadow: 2px 2px 5px black
+  text-shadow: 2px 2px 5px $black;
 }
 
-.create-microhood-review-link{
+.create-microhood-review-link {
   color: $white;
   font-family: "Typography_Times";
   font-size: 30px;
-  text-shadow: 2px 2px 5px black;
+  text-shadow: 2px 2px 5px $black;
 }
 
 .callout {
@@ -187,7 +190,7 @@ ul {
   margin-top: 30px;
   margin-left: 11px;
   font-size: 31px;
-  text-shadow: 2px 2px 5px black;
+  text-shadow: 2px 2px 5px $black;
 }
 
 .description {
@@ -249,7 +252,7 @@ ul {
 
 label {
   color: $white;
-  text-shadow: 2px 2px 5px black;
+  text-shadow: 2px 2px 5px $black;
   margin-left: 4px;
 }
 
