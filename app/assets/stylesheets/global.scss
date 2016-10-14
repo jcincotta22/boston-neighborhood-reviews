@@ -373,7 +373,6 @@ h2 {
 
 .flash-alert {
   background-color: $alert-red;
-  border-radius: 9px;
   color: $white;
   font-weight: bold;
   height: 58px;
@@ -381,7 +380,7 @@ h2 {
   margin-left: auto;
   overflow: inherit;
   text-align: center;
-  width: 103em;
+  width: 100%
 }
 
 .search-bar {
